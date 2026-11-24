@@ -3,527 +3,641 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy 12th Birthday, Nuricamal! | The Digital Art Gallery</title>
-  <meta name="description" content="A magical digital art gallery and birthday celebration for Nuricamal turning 12. Today, the world is your canvas.">
-  
-  <!-- Google Fonts: Playfair Display, Caveat (Handwritten), Plus Jakarta Sans -->
+  <title>NURICAMAL — The World in Her Colors | Түстер Әлемі</title>
+  <meta name="description" content="An interactive digital art exhibition celebrating Nuricamal's 12th birthday. A little girl. An infinite canvas. A world of colors.">
+
+  <!-- Google Fonts: Contemporary Sans + Expressive Editorial Serif + Technical Monospace -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,800&family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@500;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Ambient Floating Background Elements (Stars, Drops, Doodles) -->
-  <div class="ambient-layer" id="ambientLayer" aria-hidden="true"></div>
-  
-  <!-- Canvas Confetti Overlay -->
-  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+<body class="editorial-body">
 
-  <!-- Navigation / Monogram Bar -->
-  <header class="gallery-nav">
-    <div class="nav-container">
-      <a href="#hero" class="nav-brand" aria-label="Nuricamal 12th Birthday">
-        <span class="brand-monogram">N<span class="brand-sparkle">✦</span>12</span>
-        <span class="brand-tag">Art Gallery Exhibition</span>
-      </a>
-      
-      <nav class="nav-menu">
-        <a href="#hero" class="nav-link">Introduction</a>
-        <a href="#gallery" class="nav-link">Her Little Art World</a>
-        <a href="#studio" class="nav-link">Artist's Canvas</a>
-        <a href="#wishes" class="nav-link">Make a Wish</a>
-      </nav>
+  <!-- Subtle Paper Texture Overlay -->
+  <div class="paper-texture-overlay" aria-hidden="true"></div>
 
-      <div class="nav-actions">
-        <button id="surpriseNavBtn" class="pill-btn highlight-btn" aria-label="Open birthday surprise">
-          <span>Surprise 🎁</span>
-        </button>
+  <!-- Interactive Paint Trail Cursor Canvas (Desktop) -->
+  <canvas id="cursor-trail-canvas" aria-hidden="true"></canvas>
+
+  <!-- Exhibition Header / Colophon Bar -->
+  <header class="exhibition-header">
+    <div class="colophon-left">
+      <span class="mono-tag" data-i18n="colophon_tag">CATALOGUE D'EXPOSITION</span>
+      <span class="mono-meta" data-i18n="colophon_meta">VOL. XII — NO. 24.11</span>
+    </div>
+
+    <div class="colophon-center">
+      <a href="#opening" class="brand-monogram">NURICAMAL</a>
+    </div>
+
+    <div class="colophon-right">
+      <!-- Language Switcher: KZ · EN · RU -->
+      <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Select Language">
+        <button type="button" class="lang-btn" data-lang="kz">KZ</button>
+        <span class="lang-divider">/</span>
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <span class="lang-divider">/</span>
+        <button type="button" class="lang-btn" data-lang="ru">RU</button>
       </div>
+
+      <nav class="exhibition-nav">
+        <a href="#chapter-one" class="nav-anchor" data-i18n="nav_colors"><span>I.</span> Colors</a>
+        <a href="#chapter-two" class="nav-anchor" data-i18n="nav_studio"><span>II.</span> Studio</a>
+        <a href="#chapter-three" class="nav-anchor" data-i18n="nav_gallery"><span>III.</span> Gallery</a>
+        <a href="#birthday-reveal-section" class="nav-anchor nav-dedication" data-i18n="nav_dedication"><span>✦</span> 12th Year</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <!-- 1. HERO SECTION: BIRTHDAY INTRODUCTION -->
-    <section id="hero" class="hero-section">
-      <!-- Watercolor & Paint Splatters (SVGs) -->
-      <div class="paint-splash splash-rose" aria-hidden="true"></div>
-      <div class="paint-splash splash-gold" aria-hidden="true"></div>
-      <div class="paint-splash splash-azure" aria-hidden="true"></div>
-      <div class="paint-splash splash-sage" aria-hidden="true"></div>
-
-      <div class="hero-content">
-        <div class="hero-eyebrow fade-in-up" style="--delay: 0.1s">
-          <span class="artist-badge">
-            <svg class="palette-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2C6.5 2 2 6.5 2 12c0 2.5 1 4.5 3 5 1 .2 1.5-.5 1.5-1.2 0-.6-.2-1.2-.2-1.8 0-1.7 1.3-3 3-3h1.4c2.8 0 5-2.2 5-5 0-3.3-2.7-6-4.7-6z"/>
-              <circle cx="7.5" cy="9.5" r="1.5" fill="currentColor"/>
-              <circle cx="10.5" cy="6.5" r="1.5" fill="currentColor"/>
-              <circle cx="14.5" cy="6.5" r="1.5" fill="currentColor"/>
-              <circle cx="16.5" cy="11.5" r="1.5" fill="currentColor"/>
-            </svg>
-            Special Solo Exhibition · 12 Years of Wonder
-          </span>
-        </div>
-
-        <h1 class="hero-title fade-in-up" style="--delay: 0.3s">
-          <span class="greeting-prefix">Happy 12th Birthday,</span>
-          <span class="hero-name">
-            Nuricamal
-            <svg class="brush-stroke-underline" viewBox="0 0 320 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 21C60 9 175 4 315 15C240 23 90 27 12 18" stroke="url(#paintGrad)" stroke-width="7" stroke-linecap="round"/>
-              <defs>
-                <linearGradient id="paintGrad" x1="0" y1="0" x2="320" y2="0" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#E85D4E" />
-                  <stop offset="0.35" stop-color="#F2A93B" />
-                  <stop offset="0.7" stop-color="#4E876A" />
-                  <stop offset="1" stop-color="#3B5BA5" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </span>
-        </h1>
-
-        <p class="hero-subtitle fade-in-up" style="--delay: 0.5s">
-          “Today, the world is your canvas.”
-        </p>
-
-        <p class="hero-description fade-in-up" style="--delay: 0.65s">
-          Welcome to your personal digital art gallery, created just for you. Every brush stroke, every color, and every dream you paint makes this world brighter.
-        </p>
-
-        <div class="hero-buttons fade-in-up" style="--delay: 0.8s">
-          <button id="openSurpriseHeroBtn" class="art-btn primary-btn pulse-glow">
-            <span class="btn-icon">🎁</span>
-            <span>Open your birthday surprise</span>
-          </button>
-          
-          <button id="heroWishBtn" class="art-btn secondary-btn">
-            <span class="btn-icon">✨</span>
-            <span>Make a wish</span>
-          </button>
-
-          <a href="#studio" class="art-btn tertiary-btn">
-            <span class="btn-icon">🎨</span>
-            <span>Start painting</span>
-          </a>
-        </div>
-
-        <!-- Floating artistic doodles in hero -->
-        <div class="hero-doodles" aria-hidden="true">
-          <span class="doodle doodle-star star-1">✦</span>
-          <span class="doodle doodle-star star-2">★</span>
-          <span class="doodle doodle-drop drop-1"></span>
-          <span class="doodle doodle-drop drop-2"></span>
-          <span class="doodle doodle-text handwritten">Age 12 & Creative!</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2. GALLERY SECTION: HER LITTLE ART WORLD -->
-    <section id="gallery" class="gallery-section">
-      <div class="section-header">
-        <span class="section-tag">Exhibition Hall</span>
-        <h2 class="section-title">Her Little Art World</h2>
-        <p class="section-subtitle">
-          An actual exhibition hall prepared for Nuricamal. Here are the curated gallery frames waiting to showcase her magnificent creations.
-        </p>
-        <div class="gallery-hint">
-          <span class="hint-icon">💡</span>
-          <span>Tip: You can add or upload Nuricamal's real drawings into these frames anytime!</span>
-        </div>
+    <!-- =================================================================== -->
+    <!-- 03. OPENING — THE CANVAS                                            -->
+    <!-- =================================================================== -->
+    <section id="opening" class="section-opening">
+      <!-- Painterly Abstract Fluid Background Shape -->
+      <div class="opening-canvas-background" aria-hidden="true">
+        <div class="fluid-wash wash-cobalt"></div>
+        <div class="fluid-wash wash-vermilion"></div>
+        <div class="fluid-wash wash-yellow"></div>
+        <div class="fluid-wash wash-viridian"></div>
       </div>
 
-      <div class="gallery-grid">
-        <!-- Frame 1 -->
-        <article class="art-frame-card" data-frame-id="1">
-          <div class="frame-casing frame-ornate-gold">
-            <div class="frame-matte">
-              <div class="canvas-artwork" id="artworkContainer-1">
-                <div class="placeholder-canvas">
-                  <div class="canvas-texture"></div>
-                  <div class="placeholder-content">
-                    <div class="easel-icon">🎨</div>
-                    <p class="placeholder-label">Canvas No. 01</p>
-                    <p class="placeholder-sub">Reserved for Nuricamal's Masterpiece</p>
-                    <label class="mount-upload-btn" title="Add her photo to this frame">
-                      <span>Mount Painting</span>
-                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-1" aria-label="Upload painting 1">
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="frame-plaque">
-            <h3 class="plaque-title">Masterpiece in the Making</h3>
-            <p class="plaque-details">Nuricamal · 2026 · Acrylic & Imagination</p>
-          </div>
-        </article>
+      <div class="opening-grid-container">
+        <!-- Top Editorial Annotations -->
+        <div class="opening-top-meta">
+          <span class="annotation-item" data-i18n="hero_meta_1">[ MONOGRAPH & RETROSPECTIVE ]</span>
+          <span class="annotation-item" data-i18n="hero_meta_2">ALMATY // 2012 — 2024</span>
+          <span class="annotation-item" data-i18n="hero_meta_3">[ EXHIBITION CATALOGUE NO. 12 ]</span>
+        </div>
 
-        <!-- Frame 2 -->
-        <article class="art-frame-card" data-frame-id="2">
-          <div class="frame-casing frame-gallery-wood">
-            <div class="frame-matte">
-              <div class="canvas-artwork" id="artworkContainer-2">
-                <div class="placeholder-canvas">
-                  <div class="canvas-texture"></div>
-                  <div class="placeholder-content">
-                    <div class="easel-icon">🌸</div>
-                    <p class="placeholder-label">Canvas No. 02</p>
-                    <p class="placeholder-sub">Floral & Watercolor Studies</p>
-                    <label class="mount-upload-btn" title="Add her photo to this frame">
-                      <span>Mount Painting</span>
-                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-2" aria-label="Upload painting 2">
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="frame-plaque">
-            <h3 class="plaque-title">Colors of Spring</h3>
-            <p class="plaque-details">Nuricamal · 2026 · Watercolor on Paper</p>
-          </div>
-        </article>
-
-        <!-- Frame 3 -->
-        <article class="art-frame-card" data-frame-id="3">
-          <div class="frame-casing frame-ornate-gold">
-            <div class="frame-matte">
-              <div class="canvas-artwork" id="artworkContainer-3">
-                <div class="placeholder-canvas">
-                  <div class="canvas-texture"></div>
-                  <div class="placeholder-content">
-                    <div class="easel-icon">🌙</div>
-                    <p class="placeholder-label">Canvas No. 03</p>
-                    <p class="placeholder-sub">Whimsical Dreamscape</p>
-                    <label class="mount-upload-btn" title="Add her photo to this frame">
-                      <span>Mount Painting</span>
-                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-3" aria-label="Upload painting 3">
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="frame-plaque">
-            <h3 class="plaque-title">The Starry Sanctuary</h3>
-            <p class="plaque-details">Nuricamal · 2026 · Mixed Media</p>
-          </div>
-        </article>
-
-        <!-- Frame 4 -->
-        <article class="art-frame-card" data-frame-id="4">
-          <div class="frame-casing frame-gallery-wood">
-            <div class="frame-matte">
-              <div class="canvas-artwork" id="artworkContainer-4">
-                <div class="placeholder-canvas">
-                  <div class="canvas-texture"></div>
-                  <div class="placeholder-content">
-                    <div class="easel-icon">🦋</div>
-                    <p class="placeholder-label">Canvas No. 04</p>
-                    <p class="placeholder-sub">Creatures & Companions</p>
-                    <label class="mount-upload-btn" title="Add her photo to this frame">
-                      <span>Mount Painting</span>
-                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-4" aria-label="Upload painting 4">
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="frame-plaque">
-            <h3 class="plaque-title">Enchanted Flights</h3>
-            <p class="plaque-details">Nuricamal · 2026 · Color Pencils & Ink</p>
-          </div>
-        </article>
-
-        <!-- Frame 5 -->
-        <article class="art-frame-card" data-frame-id="5">
-          <div class="frame-casing frame-ornate-gold">
-            <div class="frame-matte">
-              <div class="canvas-artwork" id="artworkContainer-5">
-                <div class="placeholder-canvas">
-                  <div class="canvas-texture"></div>
-                  <div class="placeholder-content">
-                    <div class="easel-icon">🏰</div>
-                    <p class="placeholder-label">Canvas No. 05</p>
-                    <p class="placeholder-sub">Fairytale Architecture</p>
-                    <label class="mount-upload-btn" title="Add her photo to this frame">
-                      <span>Mount Painting</span>
-                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-5" aria-label="Upload painting 5">
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="frame-plaque">
-            <h3 class="plaque-title">The Secret Castle</h3>
-            <p class="plaque-details">Nuricamal · 2026 · Gouache & Gold Leaf</p>
-          </div>
-        </article>
-
-        <!-- Frame 6 -->
-        <article class="art-frame-card" data-frame-id="6">
-          <div class="frame-casing frame-gallery-wood">
-            <div class="frame-matte">
-              <div class="canvas-artwork" id="artworkContainer-6">
-                <div class="placeholder-canvas">
-                  <div class="canvas-texture"></div>
-                  <div class="placeholder-content">
-                    <div class="easel-icon">✨</div>
-                    <p class="placeholder-label">Canvas No. 06</p>
-                    <p class="placeholder-sub">The Infinite Horizon</p>
-                    <label class="mount-upload-btn" title="Add her photo to this frame">
-                      <span>Mount Painting</span>
-                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-6" aria-label="Upload painting 6">
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="frame-plaque">
-            <h3 class="plaque-title">Future Horizons</h3>
-            <p class="plaque-details">Nuricamal · 2026 · Endless Dreams</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- 3. INTERACTIVE STUDIO SECTION: INTERACTIVE CANVAS -->
-    <section id="studio" class="studio-section">
-      <div class="section-header">
-        <span class="section-tag">Interactive Workshop</span>
-        <h2 class="section-title">The Little Artist's Studio</h2>
-        <p class="section-subtitle">
-          Pick your brush, dip it into your favorite shades, and paint right on the screen! Every artist needs a space to play freely.
-        </p>
-      </div>
-
-      <div class="studio-container">
-        <!-- Studio Toolbar -->
-        <div class="studio-toolbar">
-          <!-- Color Palette -->
-          <div class="toolbar-group">
-            <label class="toolbar-label">Palette Colors</label>
-            <div class="color-palette" id="colorPalette">
-              <!-- Preset Swatches -->
-              <button class="color-swatch active" style="--c: #E85D4E;" data-color="#E85D4E" title="Vermilion Rose" aria-label="Color Vermilion Rose"></button>
-              <button class="color-swatch" style="--c: #F2A93B;" data-color="#F2A93B" title="Sun Gold" aria-label="Color Sun Gold"></button>
-              <button class="color-swatch" style="--c: #FBD561;" data-color="#FBD561" title="Lemon Yellow" aria-label="Color Lemon Yellow"></button>
-              <button class="color-swatch" style="--c: #4E876A;" data-color="#4E876A" title="Viridian Sage" aria-label="Color Viridian Sage"></button>
-              <button class="color-swatch" style="--c: #65B396;" data-color="#65B396" title="Mint Wash" aria-label="Color Mint Wash"></button>
-              <button class="color-swatch" style="--c: #3B5BA5;" data-color="#3B5BA5" title="Cobalt Ultramarine" aria-label="Color Cobalt Ultramarine"></button>
-              <button class="color-swatch" style="--c: #6C8FD9;" data-color="#6C8FD9" title="Sky Blue" aria-label="Color Sky Blue"></button>
-              <button class="color-swatch" style="--c: #9A7AA0;" data-color="#9A7AA0" title="Soft Lavender" aria-label="Color Soft Lavender"></button>
-              <button class="color-swatch" style="--c: #D9658B;" data-color="#D9658B" title="Magenta Blossom" aria-label="Color Magenta Blossom"></button>
-              <button class="color-swatch" style="--c: #B87333;" data-color="#B87333" title="Warm Ochre" aria-label="Color Warm Ochre"></button>
-              <button class="color-swatch" style="--c: #2D2824;" data-color="#2D2824" title="Artist Charcoal" aria-label="Color Artist Charcoal"></button>
-              
-              <!-- Custom Color Input -->
-              <div class="custom-color-wrapper" title="Pick any custom color">
-                <input type="color" id="customColorInput" value="#E85D4E" aria-label="Choose custom color">
-                <span class="custom-color-icon">🌈</span>
-              </div>
-            </div>
+        <!-- Enormous Monumental Typography -->
+        <div class="hero-typography-block">
+          <div class="hero-name-wrapper">
+            <h1 class="hero-name" data-i18n="hero_name">NURICAMAL</h1>
           </div>
 
-          <!-- Brush Size Control -->
-          <div class="toolbar-group">
-            <div class="brush-size-header">
-              <label for="brushSizeSlider" class="toolbar-label">Brush Size</label>
-              <span id="brushSizeDisplay" class="brush-size-badge">12px</span>
-            </div>
-            <div class="brush-slider-wrap">
-              <span class="size-dot size-small"></span>
-              <input type="range" id="brushSizeSlider" min="2" max="60" value="12" class="art-slider">
-              <span class="size-dot size-large"></span>
-            </div>
+          <div class="hero-subline-wrapper">
+            <p class="hero-statement" data-i18n="hero_statement">TWELVE YEARS OF CREATING.</p>
           </div>
 
-          <!-- Tools: Paint Brush, Eraser, Clear, Save -->
-          <div class="toolbar-group toolbar-tools">
-            <label class="toolbar-label">Tools</label>
-            <div class="tool-btn-grid">
-              <button id="brushToolBtn" class="tool-btn active" title="Brush Tool">
-                <span class="tool-icon">🖌️</span>
-                <span class="tool-text">Brush</span>
-              </button>
-              <button id="eraserToolBtn" class="tool-btn" title="Eraser Tool">
-                <span class="tool-icon">🧹</span>
-                <span class="tool-text">Eraser</span>
-              </button>
-              <button id="clearCanvasBtn" class="tool-btn danger-hover" title="Clear Canvas">
-                <span class="tool-icon">🗑️</span>
-                <span class="tool-text">Clear</span>
-              </button>
-              <button id="saveCanvasBtn" class="tool-btn primary-hover" title="Save My Artwork">
-                <span class="tool-icon">💾</span>
-                <span class="tool-text">Save</span>
-              </button>
-            </div>
+          <div class="hero-caption-wrapper">
+            <p class="hero-caption" data-i18n="hero_caption">24 NOVEMBER — A CELEBRATION OF IMAGINATION.</p>
           </div>
         </div>
 
-        <!-- The Painting Easel Frame -->
-        <div class="easel-wrapper">
-          <div class="easel-top-clamp"></div>
-          <div class="easel-canvas-board">
-            <canvas id="paintCanvas" width="900" height="540"></canvas>
-            <div class="canvas-watermark">Nuricamal's Canvas</div>
+        <!-- Bottom Editorial Layout & Invitation -->
+        <div class="opening-bottom-meta">
+          <div class="quote-aside">
+            <p class="meta-aside-text" data-i18n="hero_quote">
+              “A blank page is not empty. It is simply waiting for courage.”
+            </p>
+            <span class="meta-label" data-i18n="hero_quote_label">CURATION NOTE // ROOM 01</span>
           </div>
-          <div class="easel-shelf">
-            <div class="easel-shelf-tray"></div>
+
+          <div class="enter-invitation-wrapper">
+            <a href="#chapter-one" class="btn-enter-exhibition" id="enter-btn">
+              <span class="btn-text" data-i18n="hero_enter_btn">ENTER THE EXHIBITION</span>
+              <span class="btn-arrow" aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. BIRTHDAY CELEBRATION & MAKE A WISH SECTION -->
-    <section id="wishes" class="wishes-section">
-      <div class="wishes-container">
-        <div class="wish-card">
-          <div class="card-ornament ornament-top">✦ ✦ ✦</div>
-          
-          <h2 class="wish-heading">Make a Birthday Wish</h2>
-          <p class="wish-instruction">
-            Nuricamal, take a deep breath, think of the happiest dream you have for your 12th year, and blow out your birthday candle!
-          </p>
 
-          <!-- Interactive Birthday Cake & Candle -->
-          <div class="cake-stage" id="cakeStage">
-            <div class="cake-illustration" id="interactiveCandle" role="button" tabindex="0" aria-label="Click to blow out the candle and make a wish">
-              <!-- Candle -->
-              <div class="candle">
-                <div class="flame" id="candleFlame">
-                  <div class="flame-inner"></div>
-                </div>
-                <div class="smoke" id="candleSmoke"></div>
-                <div class="wick"></div>
-                <div class="candle-body"></div>
-              </div>
-              <!-- Cake layers -->
-              <div class="cake-tier tier-top">
-                <div class="frosting-drips">
-                  <span></span><span></span><span></span><span></span><span></span>
-                </div>
-                <div class="cake-cherries">🍒 🍓 🍒</div>
-              </div>
-              <div class="cake-tier tier-base">
-                <div class="cake-piping"></div>
-              </div>
-              <div class="cake-plate"></div>
-            </div>
+    <!-- =================================================================== -->
+    <!-- 04. CHAPTER ONE — A WORLD OF COLORS                                 -->
+    <!-- =================================================================== -->
+    <section id="chapter-one" class="section-chapter chapter-colors">
+      <div class="editorial-container">
+        <!-- Chapter Header & Numerals -->
+        <div class="chapter-badge">
+          <span class="chapter-number" data-i18n="ch1_badge_num">CHAPTER 01</span>
+          <span class="chapter-label" data-i18n="ch1_badge_label">A WORLD OF COLORS</span>
+        </div>
 
-            <!-- Candle status message -->
-            <div id="candleStatus" class="candle-hint">
-              Tap the candle to blow out the flame!
+        <!-- Headline & Manifesto -->
+        <div class="editorial-heading-layout">
+          <h2 class="massive-display-title">
+            <span data-i18n="ch1_title_line1">EVERY COLOR</span>
+            <span class="italic-serif-title" data-i18n="ch1_title_line2">has a story.</span>
+          </h2>
+          <div class="manifesto-aside">
+            <p class="manifesto-text" data-i18n="ch1_manifesto">
+              Some people see the world. Others find new ways to color it.
+            </p>
+            <div class="annotation-stamp">
+              <span data-i18n="ch1_stamp_1">PIGMENT ORIGIN: IMAGINATION</span>
+              <span data-i18n="ch1_stamp_2">LIGHTFASTNESS: ETERNAL</span>
             </div>
           </div>
+        </div>
 
-          <div class="wish-actions">
-            <button id="makeWishBtn" class="art-btn primary-btn celebration-trigger">
-              <span class="btn-icon">✨</span>
-              <span>Make a wish</span>
-            </button>
-            <button id="revealSurpriseFromWishBtn" class="art-btn secondary-btn">
-              <span class="btn-icon">💌</span>
-              <span>Read your birthday letter</span>
-            </button>
-          </div>
+        <!-- Asymmetrical Editorial Color Studies Composition -->
+        <div class="pigment-studies-layout">
 
-          <!-- Wish Celebration Popup Box (Appears on click) -->
-          <div id="wishCelebrationMessage" class="wish-celebration-message hidden" role="alert">
-            <div class="wish-sparkle-icon">✨🎂🎈</div>
-            <h3 class="wish-cheer-title">Your 12th Wish is Sent to the Stars!</h3>
-            <p class="wish-cheer-text">
-              May every brush stroke of your 12th year be filled with wonder, laughing with your friends, discovering new passions, and painting memories that shine forever!
+          <!-- 01: Cobalt Blue -->
+          <article class="pigment-card card-cobalt" data-color-focus="cobalt">
+            <div class="card-meta">
+              <span class="card-num" data-i18n="study1_num">STUDY 01</span>
+              <span class="card-formula" data-i18n="study1_formula">COBALT DEEP // 474 nm</span>
+            </div>
+            <div class="swatch-frame">
+              <div class="swatch-fill swatch-cobalt-bg"></div>
+              <div class="brush-stroke-overlay stroke-cobalt" aria-hidden="true"></div>
+            </div>
+            <div class="card-content">
+              <h3 class="pigment-name" data-i18n="study1_name">Cobalt Sky</h3>
+              <p class="pigment-poetic-desc" data-i18n="study1_desc">
+                The infinite calm of late dusk. The shade Nuricamal reaches for when the sky is too vast to fit inside ordinary lines.
+              </p>
+              <div class="pigment-tag" data-i18n="study1_tag">[ DEPTH & HORIZONS ]</div>
+            </div>
+          </article>
+
+          <!-- 02: Vermilion Red -->
+          <article class="pigment-card card-vermilion" data-color-focus="vermilion">
+            <div class="card-meta">
+              <span class="card-num" data-i18n="study2_num">STUDY 02</span>
+              <span class="card-formula" data-i18n="study2_formula">VERMILION CADMIUM // 640 nm</span>
+            </div>
+            <div class="swatch-frame">
+              <div class="swatch-fill swatch-vermilion-bg"></div>
+              <div class="brush-stroke-overlay stroke-vermilion" aria-hidden="true"></div>
+            </div>
+            <div class="card-content">
+              <h3 class="pigment-name" data-i18n="study2_name">Vermilion Spark</h3>
+              <p class="pigment-poetic-desc" data-i18n="study2_desc">
+                The courage of the first mark on paper. Unapologetic warmth, celebration, and the burning urge to invent.
+              </p>
+              <div class="pigment-tag" data-i18n="study2_tag">[ AUDACITY & HEART ]</div>
+            </div>
+          </article>
+
+          <!-- 03: Butter Yellow -->
+          <article class="pigment-card card-yellow" data-color-focus="yellow">
+            <div class="card-meta">
+              <span class="card-num" data-i18n="study3_num">STUDY 03</span>
+              <span class="card-formula" data-i18n="study3_formula">BUTTER OCHRE // 580 nm</span>
+            </div>
+            <div class="swatch-frame">
+              <div class="swatch-fill swatch-yellow-bg"></div>
+              <div class="brush-stroke-overlay stroke-yellow" aria-hidden="true"></div>
+            </div>
+            <div class="card-content">
+              <h3 class="pigment-name" data-i18n="study3_name">Butter Sunlight</h3>
+              <p class="pigment-poetic-desc" data-i18n="study3_desc">
+                Morning light spilling across an open sketchbook. Pure curiosity, spontaneous laughter, and unexpected joy.
+              </p>
+              <div class="pigment-tag" data-i18n="study3_tag">[ RADIANCE & PLAY ]</div>
+            </div>
+          </article>
+
+          <!-- 04: Viridian Green -->
+          <article class="pigment-card card-viridian" data-color-focus="viridian">
+            <div class="card-meta">
+              <span class="card-num" data-i18n="study4_num">STUDY 04</span>
+              <span class="card-formula" data-i18n="study4_formula">VIRIDIAN SAGE // 520 nm</span>
+            </div>
+            <div class="swatch-frame">
+              <div class="swatch-fill swatch-viridian-bg"></div>
+              <div class="brush-stroke-overlay stroke-viridian" aria-hidden="true"></div>
+            </div>
+            <div class="card-content">
+              <h3 class="pigment-name" data-i18n="study4_name">Viridian Bloom</h3>
+              <p class="pigment-poetic-desc" data-i18n="study4_desc">
+                Living wild things that sprout between stone slabs. Wild stems, gentle leaves, and quiet resilience.
+              </p>
+              <div class="pigment-tag" data-i18n="study4_tag">[ WILD GROWTH ]</div>
+            </div>
+          </article>
+
+          <!-- 05: Deep Bone Ink -->
+          <article class="pigment-card card-ink" data-color-focus="ink">
+            <div class="card-meta">
+              <span class="card-num" data-i18n="study5_num">STUDY 05</span>
+              <span class="card-formula" data-i18n="study5_formula">SUMI BONE INK // 0.05 ALBEDO</span>
+            </div>
+            <div class="swatch-frame">
+              <div class="swatch-fill swatch-ink-bg"></div>
+              <div class="brush-stroke-overlay stroke-ink" aria-hidden="true"></div>
+            </div>
+            <div class="card-content">
+              <h3 class="pigment-name" data-i18n="study5_name">Sumi Bone Ink</h3>
+              <p class="pigment-poetic-desc" data-i18n="study5_desc">
+                The grounding weight of truth. The contour line that embraces every color and gives dreams their shape.
+              </p>
+              <div class="pigment-tag" data-i18n="study5_tag">[ CONTOUR & CLARITY ]</div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Editorial Interlude Quote -->
+        <div class="editorial-interlude">
+          <blockquote class="poetic-blockquote" data-i18n="ch1_quote">
+            “To be twelve is to hold every color in both hands and know the canvas has no edges.”
+          </blockquote>
+          <div class="curator-signature" data-i18n="ch1_signature">— CURATOR'S MONOGRAPH, VOL. XII</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================================================================== -->
+    <!-- 05. CHAPTER TWO — THE INTERACTIVE CANVAS                           -->
+    <!-- =================================================================== -->
+    <section id="chapter-two" class="section-chapter chapter-studio">
+      <div class="editorial-container studio-editorial-wrapper">
+
+        <div class="chapter-badge">
+          <span class="chapter-number" data-i18n="ch2_badge_num">CHAPTER 02</span>
+          <span class="chapter-label" data-i18n="ch2_badge_label">THE INTERACTIVE CANVAS</span>
+        </div>
+
+        <div class="studio-header-block">
+          <div class="studio-title-group">
+            <h2 class="massive-display-title">
+              <span data-i18n="ch2_title_line1">YOUR HAND.</span>
+              <span class="italic-serif-title" data-i18n="ch2_title_line2">Your pigment.</span>
+            </h2>
+            <p class="studio-subtext" data-i18n="ch2_subtext">
+              An infinite digital artboard. Paint with your cursor or finger. Every stroke is real.
             </p>
           </div>
-          
-          <div class="card-ornament ornament-bottom">✦ ✦ ✦</div>
+          <div class="studio-instructions-badge">
+            <span class="instruction-dot">●</span>
+            <span class="instruction-text" data-i18n="ch2_instruction">Drag or click to paint · Select pigments & textures below · Press [U] to undo</span>
+          </div>
+        </div>
+
+        <!-- The Main Interactive Drawing Canvas Container -->
+        <div class="studio-canvas-stage" id="studio-stage">
+          <div class="canvas-paper-frame">
+            <canvas id="paint-canvas"></canvas>
+            <!-- Canvas Placeholder Watermark (fades out on first touch) -->
+            <div class="canvas-empty-state" id="canvas-empty-state">
+              <div class="watermark-symbol">✦</div>
+              <p class="watermark-title" data-i18n="ch2_watermark_title">UNTITLED CANVAS // AWAITING GESTURE</p>
+              <p class="watermark-sub" data-i18n="ch2_watermark_sub">Click anywhere or touch to lay down your first brushstroke</p>
+            </div>
+          </div>
+
+          <!-- Minimalist Floating Artist Palette Bar -->
+          <div class="floating-palette-dock" id="palette-dock">
+            <!-- Brush Styles -->
+            <div class="dock-section dock-brushes">
+              <span class="dock-label" data-i18n="dock_texture">TEXTURE</span>
+              <div class="dock-brush-buttons">
+                <button type="button" class="dock-tool-btn active" data-brush="watercolor" title="Watercolor Wash">
+                  <span class="brush-icon">≋</span>
+                  <span class="brush-label" data-i18n="tool_water">Water</span>
+                </button>
+                <button type="button" class="dock-tool-btn" data-brush="oil" title="Heavy Gouache / Oil">
+                  <span class="brush-icon">❚</span>
+                  <span class="brush-label" data-i18n="tool_gouache">Gouache</span>
+                </button>
+                <button type="button" class="dock-tool-btn" data-brush="charcoal" title="Sketch Charcoal">
+                  <span class="brush-icon">∿</span>
+                  <span class="brush-label" data-i18n="tool_charcoal">Charcoal</span>
+                </button>
+                <button type="button" class="dock-tool-btn" data-brush="splatter" title="Pigment Splatter">
+                  <span class="brush-icon">∴</span>
+                  <span class="brush-label" data-i18n="tool_splatter">Splatter</span>
+                </button>
+                <button type="button" class="dock-tool-btn" data-brush="eraser" title="Clean Linen Eraser">
+                  <span class="brush-icon">▱</span>
+                  <span class="brush-label" data-i18n="tool_eraser">Eraser</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="dock-divider"></div>
+
+            <!-- Curated Pigment Wells -->
+            <div class="dock-section dock-pigments">
+              <span class="dock-label" data-i18n="dock_pigments">PIGMENTS</span>
+              <div class="palette-wells">
+                <button type="button" class="color-well" data-color="#1434CB" style="--well-color: #1434CB;" title="Cobalt Deep" aria-label="Cobalt Blue"></button>
+                <button type="button" class="color-well" data-color="#E3371E" style="--well-color: #E3371E;" title="Cadmium Vermilion" aria-label="Vermilion Red"></button>
+                <button type="button" class="color-well" data-color="#F5CE42" style="--well-color: #F5CE42;" title="Butter Yellow" aria-label="Butter Yellow"></button>
+                <button type="button" class="color-well" data-color="#1A6347" style="--well-color: #1A6347;" title="Viridian Sage" aria-label="Viridian Green"></button>
+                <button type="button" class="color-well active" data-color="#121110" style="--well-color: #121110;" title="Bone Ink Black" aria-label="Bone Ink"></button>
+                <button type="button" class="color-well" data-color="#FAF7F2" style="--well-color: #FAF7F2;" title="Titanium Ivory" aria-label="Ivory White"></button>
+                <!-- Custom Color Picker Eye-dropper/Wheel -->
+                <label class="custom-color-trigger" title="Custom Pigment">
+                  <input type="color" id="custom-color-input" value="#D48B38">
+                  <span class="custom-color-badge" id="custom-color-preview" style="background-color: #D48B38;">+</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="dock-divider"></div>
+
+            <!-- Size Slider -->
+            <div class="dock-section dock-size">
+              <span class="dock-label"><span data-i18n="dock_stroke">STROKE:</span> <span id="brush-size-num">16</span>px</span>
+              <div class="slider-wrapper">
+                <input type="range" id="brush-size-slider" min="4" max="64" value="16" step="2" aria-label="Brush Stroke Width">
+                <div class="brush-preview-dot" id="brush-preview-dot"></div>
+              </div>
+            </div>
+
+            <div class="dock-divider"></div>
+
+            <!-- Actions: Undo, Clear, Save -->
+            <div class="dock-section dock-actions">
+              <button type="button" class="dock-action-btn" id="canvas-undo-btn" title="Undo Last Stroke (Shortcut: U)">
+                <span class="action-icon">↶</span>
+                <span data-i18n="act_undo">Undo</span>
+              </button>
+              <button type="button" class="dock-action-btn" id="canvas-clear-btn" title="Clear Canvas">
+                <span class="action-icon">✕</span>
+                <span data-i18n="act_clear">Clear</span>
+              </button>
+              <button type="button" class="dock-action-btn dock-btn-save" id="canvas-save-btn" title="Save Artwork to Device">
+                <span class="action-icon">↓</span>
+                <span data-i18n="act_save">Export</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================================================== -->
+    <!-- 06. CHAPTER THREE — THE GALLERY                                     -->
+    <!-- =================================================================== -->
+    <section id="chapter-three" class="section-chapter chapter-gallery">
+      <div class="editorial-container">
+
+        <div class="chapter-badge">
+          <span class="chapter-number" data-i18n="ch3_badge_num">CHAPTER 03</span>
+          <span class="chapter-label" data-i18n="ch3_badge_label">RETROSPECTIVE & ARCHIVE</span>
+        </div>
+
+        <div class="gallery-header-block">
+          <h2 class="massive-display-title">
+            <span data-i18n="ch3_title_line1">AN UNFINISHED</span>
+            <span class="italic-serif-title" data-i18n="ch3_title_line2">collection.</span>
+          </h2>
+          <div class="gallery-manifesto">
+            <p data-i18n="ch3_manifesto">
+              Spaces reserved for Nuricamal's genuine paintings. Twelve years of seeing what others miss, and translating wonder onto paper.
+            </p>
+            <span class="annotation-stamp" data-i18n="ch3_stamp">SERIES: 2020 — PRESENT // ORIGINAL WORKS</span>
+          </div>
+        </div>
+
+        <!-- Asymmetrical Contemporary Art Gallery Grid -->
+        <div class="gallery-asymmetric-wall">
+
+          <!-- Frame 01 (Large vertical dominant) -->
+          <div class="gallery-exhibit-frame frame-primary" data-artwork-slot="1">
+            <div class="artwork-matting">
+              <div class="artwork-viewport" id="artwork-viewport-1">
+                <div class="procedural-art art-piece-1" aria-label="Abstract painting with cobalt and ochre washes">
+                  <div class="art-layer art-layer-wash"></div>
+                  <div class="art-layer art-layer-gesture"></div>
+                  <div class="art-layer art-layer-texture"></div>
+                </div>
+                <img class="user-artwork-photo" id="artwork-img-1" src="" alt="Painting by Nuricamal" style="display: none;">
+                <label class="artwork-upload-hint" title="Add Nuricamal's actual photo">
+                  <input type="file" accept="image/*" class="artwork-file-input" data-target="artwork-img-1">
+                  <span data-i18n="frame_upload_hint">+ Place Nuricamal's Photo Here</span>
+                </label>
+              </div>
+            </div>
+            <div class="museum-placard">
+              <div class="placard-index" data-i18n="placard1_idx">EXHIBIT NO. 01</div>
+              <h3 class="placard-title" data-i18n="placard1_title">The First Horizon</h3>
+              <p class="placard-medium" data-i18n="placard1_medium">Gouache and raw pigment on heavy rag paper</p>
+              <div class="placard-meta">
+                <span data-i18n="placard1_year">YEAR: 2023</span>
+                <span data-i18n="placard1_dim">DIMENSIONS: 42 × 59 CM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frame 02 (Horizontal offset) -->
+          <div class="gallery-exhibit-frame frame-landscape" data-artwork-slot="2">
+            <div class="artwork-matting">
+              <div class="artwork-viewport" id="artwork-viewport-2">
+                <div class="procedural-art art-piece-2" aria-label="Abstract painting with vermilion and bone ink">
+                  <div class="art-layer art-layer-wash"></div>
+                  <div class="art-layer art-layer-gesture"></div>
+                </div>
+                <img class="user-artwork-photo" id="artwork-img-2" src="" alt="Painting by Nuricamal" style="display: none;">
+                <label class="artwork-upload-hint" title="Add Nuricamal's actual photo">
+                  <input type="file" accept="image/*" class="artwork-file-input" data-target="artwork-img-2">
+                  <span data-i18n="frame_upload_hint">+ Place Nuricamal's Photo Here</span>
+                </label>
+              </div>
+            </div>
+            <div class="museum-placard">
+              <div class="placard-index" data-i18n="placard2_idx">EXHIBIT NO. 02</div>
+              <h3 class="placard-title" data-i18n="placard2_title">Blue Hour Reverie</h3>
+              <p class="placard-medium" data-i18n="placard2_medium">Cobalt pigment, graphite & river sand on linen</p>
+              <div class="placard-meta">
+                <span data-i18n="placard2_year">YEAR: 2024</span>
+                <span data-i18n="placard2_dim">DIMENSIONS: 60 × 40 CM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frame 03 (Intimate square) -->
+          <div class="gallery-exhibit-frame frame-square" data-artwork-slot="3">
+            <div class="artwork-matting">
+              <div class="artwork-viewport" id="artwork-viewport-3">
+                <div class="procedural-art art-piece-3" aria-label="Abstract composition with butter yellow and viridian">
+                  <div class="art-layer art-layer-wash"></div>
+                  <div class="art-layer art-layer-gesture"></div>
+                </div>
+                <img class="user-artwork-photo" id="artwork-img-3" src="" alt="Painting by Nuricamal" style="display: none;">
+                <label class="artwork-upload-hint" title="Add Nuricamal's actual photo">
+                  <input type="file" accept="image/*" class="artwork-file-input" data-target="artwork-img-3">
+                  <span data-i18n="frame_upload_hint">+ Place Nuricamal's Photo Here</span>
+                </label>
+              </div>
+            </div>
+            <div class="museum-placard">
+              <div class="placard-index" data-i18n="placard3_idx">EXHIBIT NO. 03</div>
+              <h3 class="placard-title" data-i18n="placard3_title">Wild Sunflowers in the Wind</h3>
+              <p class="placard-medium" data-i18n="placard3_medium">Heavy body acrylic & butter ochre</p>
+              <div class="placard-meta">
+                <span data-i18n="placard3_year">YEAR: 2024</span>
+                <span data-i18n="placard3_dim">DIMENSIONS: 35 × 35 CM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frame 04 (Tall architectural vertical) -->
+          <div class="gallery-exhibit-frame frame-tall" data-artwork-slot="4">
+            <div class="artwork-matting">
+              <div class="artwork-viewport" id="artwork-viewport-4">
+                <div class="procedural-art art-piece-4" aria-label="Abstract architectural ink study">
+                  <div class="art-layer art-layer-wash"></div>
+                  <div class="art-layer art-layer-gesture"></div>
+                </div>
+                <img class="user-artwork-photo" id="artwork-img-4" src="" alt="Painting by Nuricamal" style="display: none;">
+                <label class="artwork-upload-hint" title="Add Nuricamal's actual photo">
+                  <input type="file" accept="image/*" class="artwork-file-input" data-target="artwork-img-4">
+                  <span data-i18n="frame_upload_hint">+ Place Nuricamal's Photo Here</span>
+                </label>
+              </div>
+            </div>
+            <div class="museum-placard">
+              <div class="placard-index" data-i18n="placard4_idx">EXHIBIT NO. 04</div>
+              <h3 class="placard-title" data-i18n="placard4_title">Quiet Geometry</h3>
+              <p class="placard-medium" data-i18n="placard4_medium">Sumi ink and diluted watercolor wash</p>
+              <div class="placard-meta">
+                <span data-i18n="placard4_year">YEAR: 2024</span>
+                <span data-i18n="placard4_dim">DIMENSIONS: 30 × 70 CM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frame 05 (Reserved for Year Twelve) -->
+          <div class="gallery-exhibit-frame frame-future" data-artwork-slot="5">
+            <div class="artwork-matting">
+              <div class="artwork-viewport viewport-future" id="artwork-viewport-5">
+                <div class="future-canvas-blank">
+                  <div class="future-seal">✦ 12 ✦</div>
+                  <p class="future-headline" data-i18n="future_headline">RESERVED FOR THE YEAR AHEAD</p>
+                  <p class="future-caption" data-i18n="future_caption">An unwritten surface waiting for the brushstrokes of age twelve.</p>
+                </div>
+                <img class="user-artwork-photo" id="artwork-img-5" src="" alt="Painting by Nuricamal" style="display: none;">
+                <label class="artwork-upload-hint" title="Add Nuricamal's actual photo">
+                  <input type="file" accept="image/*" class="artwork-file-input" data-target="artwork-img-5">
+                  <span data-i18n="frame_upload_hint">+ Place Nuricamal's Photo Here</span>
+                </label>
+              </div>
+            </div>
+            <div class="museum-placard">
+              <div class="placard-index" data-i18n="placard5_idx">EXHIBIT NO. 05</div>
+              <h3 class="placard-title" data-i18n="placard5_title">Untitled (Age Twelve)</h3>
+              <p class="placard-medium" data-i18n="placard5_medium">Pure Belgian linen, gesso, uncommitted space</p>
+              <div class="placard-meta">
+                <span data-i18n="placard5_date">DATE: 24 NOVEMBER 2024 →</span>
+                <span data-i18n="placard5_status">STATUS: COMMENCING</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- 5. FINAL SECTION -->
-    <section class="final-section">
-      <div class="final-artistic-visual" aria-hidden="true">
-        <svg class="paint-swirl" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 120 C 150 20, 250 180, 380 90 C 450 40, 520 140, 580 80" stroke="#F2A93B" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
-          <path d="M40 90 C 180 180, 280 40, 420 120 C 480 160, 530 60, 570 110" stroke="#E85D4E" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
-          <path d="M60 140 C 200 60, 310 160, 440 70 C 490 20, 540 100, 560 90" stroke="#3B5BA5" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
-        </svg>
-      </div>
 
-      <div class="final-content">
-        <h2 class="final-headline">
-          “Keep painting your world, Nuricamal.”
-        </h2>
-        
-        <div class="final-signature-wrap">
-          <span class="signature-line"></span>
-          <p class="final-signature">
-            With love, from your family.
-          </p>
-          <span class="signature-line"></span>
-        </div>
+    <!-- =================================================================== -->
+    <!-- 07. THE BIRTHDAY REVEAL                                             -->
+    <!-- =================================================================== -->
+    <section id="birthday-reveal-section" class="section-birthday-reveal">
+      <div class="editorial-container reveal-container">
 
-        <div class="final-hearts">
-          <span class="floating-heart">💖</span>
-          <span class="floating-palette">🎨</span>
-          <span class="floating-heart">✨</span>
-        </div>
-      </div>
-    </section>
-  </main>
+        <!-- Intriguing Minimal Trigger -->
+        <div class="reveal-trigger-wrapper">
+          <span class="reveal-eyebrow" data-i18n="rev_eyebrow">[ SPECIAL COMMISSION — ROOM 04 ]</span>
 
-  <!-- BIRTHDAY SURPRISE MODAL / HIDDEN MESSAGE REVEAL -->
-  <div id="surpriseModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="surpriseModalTitle">
-    <div class="modal-envelope-wrapper">
-      <div class="letter-card">
-        <button id="closeSurpriseBtn" class="modal-close-btn" aria-label="Close surprise message">&times;</button>
-        
-        <div class="letter-wax-seal" aria-hidden="true">
-          <span class="seal-letter">N</span>
-        </div>
-
-        <div class="letter-header">
-          <span class="letter-label">✦ A Birthday Letter for You ✦</span>
-          <h2 id="surpriseModalTitle" class="letter-recipient">Dearest Nuricamal,</h2>
-        </div>
-
-        <div class="letter-body">
-          <p class="letter-text">
-            “Dear Nuricamal, never stop creating, dreaming, and filling the world with your colors. You have a special talent, and I hope your 12th year brings you endless happiness, inspiration, and beautiful adventures. Happy Birthday!”
-          </p>
-        </div>
-
-        <div class="letter-footer">
-          <div class="letter-doodle">🎨 🌸 💫</div>
-          <p class="letter-signoff">With all our warmest love & admiration,</p>
-          <p class="letter-sender">Your Family</p>
-        </div>
-
-        <div class="letter-actions">
-          <button id="modalConfettiBtn" class="art-btn primary-btn">
-            <span>Celebrate Again! 🎊</span>
+          <button type="button" class="reveal-curtain-trigger" id="reveal-trigger-btn">
+            <span class="trigger-label-small" data-i18n="rev_trigger_small">AN UNFINISHED NOTE</span>
+            <span class="trigger-text-large" data-i18n="rev_trigger_large">ONE MORE THING...</span>
+            <span class="trigger-sub" data-i18n="rev_trigger_sub">[ CLICK TO UNVEIL THE DEDICATION ✦ ]</span>
           </button>
         </div>
+
       </div>
-    </div>
-  </div>
 
-  <footer class="gallery-footer">
-    <div class="footer-container">
-      <p>Created with love for Nuricamal's 12th Birthday · A Lifetime of Masterpieces Awaits</p>
-    </div>
-  </footer>
+      <!-- Full-Screen Celebratory Reveal Overlay Stage -->
+      <div class="celebration-stage" id="celebration-stage" aria-hidden="true">
+        <!-- Interactive Burst Background Canvas -->
+        <canvas id="celebration-burst-canvas"></canvas>
 
-  <!-- Vanilla JavaScript -->
+        <div class="celebration-backdrop-decor">
+          <div class="bloom-shape bloom-cobalt"></div>
+          <div class="bloom-shape bloom-vermilion"></div>
+          <div class="bloom-shape bloom-yellow"></div>
+        </div>
+
+        <div class="celebration-content-box">
+          <button type="button" class="btn-close-celebration" id="close-celebration-btn" aria-label="Close Dedication">
+            <span data-i18n="rev_close_btn">CLOSE ✕</span>
+          </button>
+
+          <div class="celebration-dedication">
+            <div class="celebration-badge-row">
+              <span class="badge-accent" data-i18n="rev_badge_age">TWELVE YEARS OLD</span>
+              <span class="badge-separator">·</span>
+              <span class="badge-accent" data-i18n="rev_badge_date">24 NOVEMBER</span>
+            </div>
+
+            <h2 class="celebration-headline">
+              <span data-i18n="rev_headline_prefix">HAPPY 12TH BIRTHDAY,</span><br>
+              <span class="celebration-name" data-i18n="rev_name">NURICAMAL!</span>
+            </h2>
+
+            <div class="celebration-message-divider"></div>
+
+            <p class="celebration-message" data-i18n="rev_message">
+              May you always find new colors, new dreams, and new reasons to create. Never stop exploring the world through your imagination. This is your canvas.
+            </p>
+
+            <div class="celebration-interactive-note">
+              <span data-i18n="rev_interactive_note">✦ Click anywhere to release more color blooms into her celebration ✦</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================================================================== -->
+    <!-- 08. THE ENDING                                                      -->
+    <!-- =================================================================== -->
+    <section id="ending" class="section-ending">
+      <div class="editorial-container ending-container">
+
+        <div class="ending-statement-block">
+          <span class="ending-annotation" data-i18n="end_annotation">[ EPILOGUE // CONTINUUM ]</span>
+          <h2 class="ending-massive-title" data-i18n="end_title">
+            THE WORLD IS YOUR CANVAS.
+          </h2>
+          <p class="ending-subtitle" data-i18n="end_subtitle">
+            Keep creating, Nuricamal.
+          </p>
+          <p class="ending-signature" data-i18n="end_signature">
+            Made with love.
+          </p>
+        </div>
+
+        <div class="ending-action-row">
+          <button type="button" class="btn-return-top" id="return-top-btn">
+            <span data-i18n="end_return_btn">RETURN TO BEGINNING</span>
+            <span class="arrow-up" aria-hidden="true">↑</span>
+          </button>
+        </div>
+
+        <!-- Colophon & Fine Print -->
+        <footer class="exhibition-footer">
+          <div class="footer-meta-col">
+            <span class="footer-title" data-i18n="footer_title">NURICAMAL — 12 YEARS OF CREATING</span>
+            <span class="footer-copy" data-i18n="footer_copy">Curated on the occasion of her twelfth birthday · 24 November</span>
+          </div>
+          <div class="footer-meta-col col-right">
+            <span data-i18n="footer_tagline">A LITTLE GIRL. AN INFINITE CANVAS. A WORLD OF COLORS.</span>
+            <span data-i18n="footer_rights">ALL RIGHTS TO IMAGINATION RESERVED.</span>
+          </div>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
