@@ -85,7 +85,6 @@ const i18nData = {
     ch3_title_line2: "жинақ.",
     ch3_manifesto: "Нурикамалдың шынайы туындыларына арналған кеңістік. Он екі жылдық таңданыс пен қағазға көшкен қиял жемісі.",
     ch3_stamp: "СЕРИЯ: 2020 — ҚАЗІРГІ УАҚЫТ // ТҮПНҰСҚА ТУЫНДЫЛАР",
-    frame_upload_hint: "+ Нурикамалдың суретін осында қойыңыз",
     placard1_idx: "№ 01 ЭКСПОНАТ",
     placard1_title: "Алғашқы көкжиек",
     placard1_medium: "Гуашь пен табиғи пигмент, қалың мақта қағазы",
@@ -211,7 +210,6 @@ const i18nData = {
     ch3_title_line2: "collection.",
     ch3_manifesto: "Spaces reserved for Nuricamal's genuine paintings. Twelve years of seeing what others miss, and translating wonder onto paper.",
     ch3_stamp: "SERIES: 2020 — PRESENT // ORIGINAL WORKS",
-    frame_upload_hint: "+ Place Nuricamal's Photo Here",
     placard1_idx: "EXHIBIT NO. 01",
     placard1_title: "The First Horizon",
     placard1_medium: "Gouache and raw pigment on heavy rag paper",
@@ -337,7 +335,6 @@ const i18nData = {
     ch3_title_line2: "коллекция.",
     ch3_manifesto: "Пространство, зарезервированное для настоящих картин Нурикамал. Двенадцать лет удивительного взгляда на мир.",
     ch3_stamp: "СЕРИЯ: 2020 — НАСТОЯЩЕЕ ВРЕМЯ // ОРИГИНАЛЬНЫЕ РАБОТЫ",
-    frame_upload_hint: "+ Поместить фотографию картины Нурикамал",
     placard1_idx: "ЭКСПОНАТ № 01",
     placard1_title: "Первый горизонт",
     placard1_medium: "Гуашь и натуральный пигмент на плотной хлопковой бумаге",
@@ -394,7 +391,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initLanguageSwitcher();
   initCursorPaintTrail();
   initDrawingStudio();
-  initGalleryPhotoUploaders();
   initBirthdayReveal();
   initNavigationAndScroll();
 });
@@ -896,37 +892,6 @@ function initDrawingStudio() {
 }
 
 
-/* ==============================================================================
- * 03. CHAPTER THREE — GALLERY PHOTO UPLOADERS
- * Allows family or visitors to drop/select real photos of Nuricamal's paintings
- * ============================================================================== */
-function initGalleryPhotoUploaders() {
-  const fileInputs = document.querySelectorAll(".artwork-file-input");
-
-  fileInputs.forEach((input) => {
-    input.addEventListener("change", (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-
-      const targetId = input.dataset.target;
-      const targetImg = document.getElementById(targetId);
-      if (!targetImg) return;
-
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        targetImg.src = event.target.result;
-        targetImg.style.display = "block";
-
-        const viewport = targetImg.closest(".artwork-viewport");
-        if (viewport) {
-          const proceduralArt = viewport.querySelector(".procedural-art, .future-canvas-blank");
-          if (proceduralArt) proceduralArt.style.display = "none";
-        }
-      };
-      reader.readAsDataURL(file);
-    });
-  });
-}
 
 
 /* ==============================================================================

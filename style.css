@@ -1259,115 +1259,19 @@ button {
   height: clamp(320px, 38vw, 440px);
 }
 
-/* Procedural Art Pieces (Museum Stand-ins) */
-.procedural-art {
+/* SVG Inline Artworks */
+.svg-artwork {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  position: relative;
-  transition: transform 0.8s var(--ease-editorial);
+  display: block;
+  transition: transform 0.6s ease;
 }
 
-.gallery-exhibit-frame:hover .procedural-art {
+.gallery-exhibit-frame:hover .svg-artwork {
   transform: scale(1.03);
-}
-
-.art-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Piece 1: Cobalt & Dawn */
-.art-piece-1 .art-layer-wash {
-  background: radial-gradient(ellipse at 70% 30%, rgba(20, 52, 203, 0.85) 0%, rgba(20, 52, 203, 0) 65%),
-              radial-gradient(ellipse at 20% 80%, rgba(245, 206, 66, 0.75) 0%, rgba(245, 206, 66, 0) 60%),
-              #FAF8F5;
-}
-
-.art-piece-1 .art-layer-gesture {
-  background-image: radial-gradient(circle at 45% 55%, rgba(18, 17, 16, 0.7) 0%, transparent 45%);
-  mix-blend-mode: multiply;
-  filter: blur(12px);
-}
-
-/* Piece 2: Vermilion & Ink */
-.art-piece-2 .art-layer-wash {
-  background: linear-gradient(135deg, rgba(227, 55, 30, 0.85) 0%, rgba(18, 17, 16, 0.9) 100%);
-}
-
-.art-piece-2 .art-layer-gesture {
-  background: radial-gradient(circle at 60% 40%, rgba(245, 206, 66, 0.7) 0%, transparent 50%);
-  mix-blend-mode: screen;
-}
-
-/* Piece 3: Sunflowers */
-.art-piece-3 .art-layer-wash {
-  background: radial-gradient(circle at 50% 50%, #F5CE42 0%, #1A6347 80%);
-  filter: contrast(110%);
-}
-
-.art-piece-3 .art-layer-gesture {
-  background-image: radial-gradient(circle at 30% 70%, rgba(227, 55, 30, 0.6) 0%, transparent 60%);
-  mix-blend-mode: overlay;
-}
-
-/* Piece 4: Sumi & Geometry */
-.art-piece-4 .art-layer-wash {
-  background: linear-gradient(to bottom, #FAF7F2 0%, #121110 90%);
-}
-
-.art-piece-4 .art-layer-gesture {
-  background: radial-gradient(circle at 50% 30%, rgba(20, 52, 203, 0.7) 0%, transparent 50%);
-  mix-blend-mode: hard-light;
-}
-
-/* User Artwork Photo Replacement */
-.user-artwork-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* Hint for Uploading Nuricamal's Real Photos */
-.artwork-upload-hint {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid var(--color-border);
-  padding: 6px 12px;
-  font-family: var(--font-mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-ink-secondary);
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease, background 0.2s ease;
-  z-index: 5;
-}
-
-.artwork-matting:hover .artwork-upload-hint {
-  opacity: 1;
-}
-
-.artwork-upload-hint:hover {
-  background: var(--color-ink);
-  color: var(--color-paper);
-}
-
-.artwork-file-input {
-  position: absolute;
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  z-index: -1;
 }
 
 /* Piece 5: Future Canvas */
@@ -2159,14 +2063,6 @@ button {
     height: clamp(260px, 62vw, 360px);
   }
 
-  /* Show upload hint button on mobile touch devices */
-  .artwork-upload-hint {
-    opacity: 0.95;
-    bottom: 8px;
-    right: 8px;
-    padding: 6px 10px;
-    font-size: 0.6rem;
-  }
 
   .museum-placard {
     margin-top: 14px;
