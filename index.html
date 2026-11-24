@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 12th Birthday, Nuricamal! | The Digital Art Gallery</title>
+  <meta name="description" content="A magical digital art gallery and birthday celebration for Nuricamal turning 12. Today, the world is your canvas.">
+  
+  <!-- Google Fonts: Playfair Display, Caveat (Handwritten), Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Floating Background Elements (Stars, Drops, Doodles) -->
+  <div class="ambient-layer" id="ambientLayer" aria-hidden="true"></div>
+  
+  <!-- Canvas Confetti Overlay -->
+  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation / Monogram Bar -->
+  <header class="gallery-nav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Nuricamal 12th Birthday">
+        <span class="brand-monogram">N<span class="brand-sparkle">✦</span>12</span>
+        <span class="brand-tag">Art Gallery Exhibition</span>
+      </a>
+      
+      <nav class="nav-menu">
+        <a href="#hero" class="nav-link">Introduction</a>
+        <a href="#gallery" class="nav-link">Her Little Art World</a>
+        <a href="#studio" class="nav-link">Artist's Canvas</a>
+        <a href="#wishes" class="nav-link">Make a Wish</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="surpriseNavBtn" class="pill-btn highlight-btn" aria-label="Open birthday surprise">
+          <span>Surprise 🎁</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SECTION: BIRTHDAY INTRODUCTION -->
+    <section id="hero" class="hero-section">
+      <!-- Watercolor & Paint Splatters (SVGs) -->
+      <div class="paint-splash splash-rose" aria-hidden="true"></div>
+      <div class="paint-splash splash-gold" aria-hidden="true"></div>
+      <div class="paint-splash splash-azure" aria-hidden="true"></div>
+      <div class="paint-splash splash-sage" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-eyebrow fade-in-up" style="--delay: 0.1s">
+          <span class="artist-badge">
+            <svg class="palette-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2C6.5 2 2 6.5 2 12c0 2.5 1 4.5 3 5 1 .2 1.5-.5 1.5-1.2 0-.6-.2-1.2-.2-1.8 0-1.7 1.3-3 3-3h1.4c2.8 0 5-2.2 5-5 0-3.3-2.7-6-4.7-6z"/>
+              <circle cx="7.5" cy="9.5" r="1.5" fill="currentColor"/>
+              <circle cx="10.5" cy="6.5" r="1.5" fill="currentColor"/>
+              <circle cx="14.5" cy="6.5" r="1.5" fill="currentColor"/>
+              <circle cx="16.5" cy="11.5" r="1.5" fill="currentColor"/>
+            </svg>
+            Special Solo Exhibition · 12 Years of Wonder
+          </span>
+        </div>
+
+        <h1 class="hero-title fade-in-up" style="--delay: 0.3s">
+          <span class="greeting-prefix">Happy 12th Birthday,</span>
+          <span class="hero-name">
+            Nuricamal
+            <svg class="brush-stroke-underline" viewBox="0 0 320 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 21C60 9 175 4 315 15C240 23 90 27 12 18" stroke="url(#paintGrad)" stroke-width="7" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="paintGrad" x1="0" y1="0" x2="320" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#E85D4E" />
+                  <stop offset="0.35" stop-color="#F2A93B" />
+                  <stop offset="0.7" stop-color="#4E876A" />
+                  <stop offset="1" stop-color="#3B5BA5" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+        </h1>
+
+        <p class="hero-subtitle fade-in-up" style="--delay: 0.5s">
+          “Today, the world is your canvas.”
+        </p>
+
+        <p class="hero-description fade-in-up" style="--delay: 0.65s">
+          Welcome to your personal digital art gallery, created just for you. Every brush stroke, every color, and every dream you paint makes this world brighter.
+        </p>
+
+        <div class="hero-buttons fade-in-up" style="--delay: 0.8s">
+          <button id="openSurpriseHeroBtn" class="art-btn primary-btn pulse-glow">
+            <span class="btn-icon">🎁</span>
+            <span>Open your birthday surprise</span>
+          </button>
+          
+          <button id="heroWishBtn" class="art-btn secondary-btn">
+            <span class="btn-icon">✨</span>
+            <span>Make a wish</span>
+          </button>
+
+          <a href="#studio" class="art-btn tertiary-btn">
+            <span class="btn-icon">🎨</span>
+            <span>Start painting</span>
+          </a>
+        </div>
+
+        <!-- Floating artistic doodles in hero -->
+        <div class="hero-doodles" aria-hidden="true">
+          <span class="doodle doodle-star star-1">✦</span>
+          <span class="doodle doodle-star star-2">★</span>
+          <span class="doodle doodle-drop drop-1"></span>
+          <span class="doodle doodle-drop drop-2"></span>
+          <span class="doodle doodle-text handwritten">Age 12 & Creative!</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. GALLERY SECTION: HER LITTLE ART WORLD -->
+    <section id="gallery" class="gallery-section">
+      <div class="section-header">
+        <span class="section-tag">Exhibition Hall</span>
+        <h2 class="section-title">Her Little Art World</h2>
+        <p class="section-subtitle">
+          An actual exhibition hall prepared for Nuricamal. Here are the curated gallery frames waiting to showcase her magnificent creations.
+        </p>
+        <div class="gallery-hint">
+          <span class="hint-icon">💡</span>
+          <span>Tip: You can add or upload Nuricamal's real drawings into these frames anytime!</span>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Frame 1 -->
+        <article class="art-frame-card" data-frame-id="1">
+          <div class="frame-casing frame-ornate-gold">
+            <div class="frame-matte">
+              <div class="canvas-artwork" id="artworkContainer-1">
+                <div class="placeholder-canvas">
+                  <div class="canvas-texture"></div>
+                  <div class="placeholder-content">
+                    <div class="easel-icon">🎨</div>
+                    <p class="placeholder-label">Canvas No. 01</p>
+                    <p class="placeholder-sub">Reserved for Nuricamal's Masterpiece</p>
+                    <label class="mount-upload-btn" title="Add her photo to this frame">
+                      <span>Mount Painting</span>
+                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-1" aria-label="Upload painting 1">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-plaque">
+            <h3 class="plaque-title">Masterpiece in the Making</h3>
+            <p class="plaque-details">Nuricamal · 2026 · Acrylic & Imagination</p>
+          </div>
+        </article>
+
+        <!-- Frame 2 -->
+        <article class="art-frame-card" data-frame-id="2">
+          <div class="frame-casing frame-gallery-wood">
+            <div class="frame-matte">
+              <div class="canvas-artwork" id="artworkContainer-2">
+                <div class="placeholder-canvas">
+                  <div class="canvas-texture"></div>
+                  <div class="placeholder-content">
+                    <div class="easel-icon">🌸</div>
+                    <p class="placeholder-label">Canvas No. 02</p>
+                    <p class="placeholder-sub">Floral & Watercolor Studies</p>
+                    <label class="mount-upload-btn" title="Add her photo to this frame">
+                      <span>Mount Painting</span>
+                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-2" aria-label="Upload painting 2">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-plaque">
+            <h3 class="plaque-title">Colors of Spring</h3>
+            <p class="plaque-details">Nuricamal · 2026 · Watercolor on Paper</p>
+          </div>
+        </article>
+
+        <!-- Frame 3 -->
+        <article class="art-frame-card" data-frame-id="3">
+          <div class="frame-casing frame-ornate-gold">
+            <div class="frame-matte">
+              <div class="canvas-artwork" id="artworkContainer-3">
+                <div class="placeholder-canvas">
+                  <div class="canvas-texture"></div>
+                  <div class="placeholder-content">
+                    <div class="easel-icon">🌙</div>
+                    <p class="placeholder-label">Canvas No. 03</p>
+                    <p class="placeholder-sub">Whimsical Dreamscape</p>
+                    <label class="mount-upload-btn" title="Add her photo to this frame">
+                      <span>Mount Painting</span>
+                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-3" aria-label="Upload painting 3">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-plaque">
+            <h3 class="plaque-title">The Starry Sanctuary</h3>
+            <p class="plaque-details">Nuricamal · 2026 · Mixed Media</p>
+          </div>
+        </article>
+
+        <!-- Frame 4 -->
+        <article class="art-frame-card" data-frame-id="4">
+          <div class="frame-casing frame-gallery-wood">
+            <div class="frame-matte">
+              <div class="canvas-artwork" id="artworkContainer-4">
+                <div class="placeholder-canvas">
+                  <div class="canvas-texture"></div>
+                  <div class="placeholder-content">
+                    <div class="easel-icon">🦋</div>
+                    <p class="placeholder-label">Canvas No. 04</p>
+                    <p class="placeholder-sub">Creatures & Companions</p>
+                    <label class="mount-upload-btn" title="Add her photo to this frame">
+                      <span>Mount Painting</span>
+                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-4" aria-label="Upload painting 4">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-plaque">
+            <h3 class="plaque-title">Enchanted Flights</h3>
+            <p class="plaque-details">Nuricamal · 2026 · Color Pencils & Ink</p>
+          </div>
+        </article>
+
+        <!-- Frame 5 -->
+        <article class="art-frame-card" data-frame-id="5">
+          <div class="frame-casing frame-ornate-gold">
+            <div class="frame-matte">
+              <div class="canvas-artwork" id="artworkContainer-5">
+                <div class="placeholder-canvas">
+                  <div class="canvas-texture"></div>
+                  <div class="placeholder-content">
+                    <div class="easel-icon">🏰</div>
+                    <p class="placeholder-label">Canvas No. 05</p>
+                    <p class="placeholder-sub">Fairytale Architecture</p>
+                    <label class="mount-upload-btn" title="Add her photo to this frame">
+                      <span>Mount Painting</span>
+                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-5" aria-label="Upload painting 5">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-plaque">
+            <h3 class="plaque-title">The Secret Castle</h3>
+            <p class="plaque-details">Nuricamal · 2026 · Gouache & Gold Leaf</p>
+          </div>
+        </article>
+
+        <!-- Frame 6 -->
+        <article class="art-frame-card" data-frame-id="6">
+          <div class="frame-casing frame-gallery-wood">
+            <div class="frame-matte">
+              <div class="canvas-artwork" id="artworkContainer-6">
+                <div class="placeholder-canvas">
+                  <div class="canvas-texture"></div>
+                  <div class="placeholder-content">
+                    <div class="easel-icon">✨</div>
+                    <p class="placeholder-label">Canvas No. 06</p>
+                    <p class="placeholder-sub">The Infinite Horizon</p>
+                    <label class="mount-upload-btn" title="Add her photo to this frame">
+                      <span>Mount Painting</span>
+                      <input type="file" accept="image/*" class="frame-file-input" data-target="artworkContainer-6" aria-label="Upload painting 6">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-plaque">
+            <h3 class="plaque-title">Future Horizons</h3>
+            <p class="plaque-details">Nuricamal · 2026 · Endless Dreams</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. INTERACTIVE STUDIO SECTION: INTERACTIVE CANVAS -->
+    <section id="studio" class="studio-section">
+      <div class="section-header">
+        <span class="section-tag">Interactive Workshop</span>
+        <h2 class="section-title">The Little Artist's Studio</h2>
+        <p class="section-subtitle">
+          Pick your brush, dip it into your favorite shades, and paint right on the screen! Every artist needs a space to play freely.
+        </p>
+      </div>
+
+      <div class="studio-container">
+        <!-- Studio Toolbar -->
+        <div class="studio-toolbar">
+          <!-- Color Palette -->
+          <div class="toolbar-group">
+            <label class="toolbar-label">Palette Colors</label>
+            <div class="color-palette" id="colorPalette">
+              <!-- Preset Swatches -->
+              <button class="color-swatch active" style="--c: #E85D4E;" data-color="#E85D4E" title="Vermilion Rose" aria-label="Color Vermilion Rose"></button>
+              <button class="color-swatch" style="--c: #F2A93B;" data-color="#F2A93B" title="Sun Gold" aria-label="Color Sun Gold"></button>
+              <button class="color-swatch" style="--c: #FBD561;" data-color="#FBD561" title="Lemon Yellow" aria-label="Color Lemon Yellow"></button>
+              <button class="color-swatch" style="--c: #4E876A;" data-color="#4E876A" title="Viridian Sage" aria-label="Color Viridian Sage"></button>
+              <button class="color-swatch" style="--c: #65B396;" data-color="#65B396" title="Mint Wash" aria-label="Color Mint Wash"></button>
+              <button class="color-swatch" style="--c: #3B5BA5;" data-color="#3B5BA5" title="Cobalt Ultramarine" aria-label="Color Cobalt Ultramarine"></button>
+              <button class="color-swatch" style="--c: #6C8FD9;" data-color="#6C8FD9" title="Sky Blue" aria-label="Color Sky Blue"></button>
+              <button class="color-swatch" style="--c: #9A7AA0;" data-color="#9A7AA0" title="Soft Lavender" aria-label="Color Soft Lavender"></button>
+              <button class="color-swatch" style="--c: #D9658B;" data-color="#D9658B" title="Magenta Blossom" aria-label="Color Magenta Blossom"></button>
+              <button class="color-swatch" style="--c: #B87333;" data-color="#B87333" title="Warm Ochre" aria-label="Color Warm Ochre"></button>
+              <button class="color-swatch" style="--c: #2D2824;" data-color="#2D2824" title="Artist Charcoal" aria-label="Color Artist Charcoal"></button>
+              
+              <!-- Custom Color Input -->
+              <div class="custom-color-wrapper" title="Pick any custom color">
+                <input type="color" id="customColorInput" value="#E85D4E" aria-label="Choose custom color">
+                <span class="custom-color-icon">🌈</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brush Size Control -->
+          <div class="toolbar-group">
+            <div class="brush-size-header">
+              <label for="brushSizeSlider" class="toolbar-label">Brush Size</label>
+              <span id="brushSizeDisplay" class="brush-size-badge">12px</span>
+            </div>
+            <div class="brush-slider-wrap">
+              <span class="size-dot size-small"></span>
+              <input type="range" id="brushSizeSlider" min="2" max="60" value="12" class="art-slider">
+              <span class="size-dot size-large"></span>
+            </div>
+          </div>
+
+          <!-- Tools: Paint Brush, Eraser, Clear, Save -->
+          <div class="toolbar-group toolbar-tools">
+            <label class="toolbar-label">Tools</label>
+            <div class="tool-btn-grid">
+              <button id="brushToolBtn" class="tool-btn active" title="Brush Tool">
+                <span class="tool-icon">🖌️</span>
+                <span class="tool-text">Brush</span>
+              </button>
+              <button id="eraserToolBtn" class="tool-btn" title="Eraser Tool">
+                <span class="tool-icon">🧹</span>
+                <span class="tool-text">Eraser</span>
+              </button>
+              <button id="clearCanvasBtn" class="tool-btn danger-hover" title="Clear Canvas">
+                <span class="tool-icon">🗑️</span>
+                <span class="tool-text">Clear</span>
+              </button>
+              <button id="saveCanvasBtn" class="tool-btn primary-hover" title="Save My Artwork">
+                <span class="tool-icon">💾</span>
+                <span class="tool-text">Save</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Painting Easel Frame -->
+        <div class="easel-wrapper">
+          <div class="easel-top-clamp"></div>
+          <div class="easel-canvas-board">
+            <canvas id="paintCanvas" width="900" height="540"></canvas>
+            <div class="canvas-watermark">Nuricamal's Canvas</div>
+          </div>
+          <div class="easel-shelf">
+            <div class="easel-shelf-tray"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BIRTHDAY CELEBRATION & MAKE A WISH SECTION -->
+    <section id="wishes" class="wishes-section">
+      <div class="wishes-container">
+        <div class="wish-card">
+          <div class="card-ornament ornament-top">✦ ✦ ✦</div>
+          
+          <h2 class="wish-heading">Make a Birthday Wish</h2>
+          <p class="wish-instruction">
+            Nuricamal, take a deep breath, think of the happiest dream you have for your 12th year, and blow out your birthday candle!
+          </p>
+
+          <!-- Interactive Birthday Cake & Candle -->
+          <div class="cake-stage" id="cakeStage">
+            <div class="cake-illustration" id="interactiveCandle" role="button" tabindex="0" aria-label="Click to blow out the candle and make a wish">
+              <!-- Candle -->
+              <div class="candle">
+                <div class="flame" id="candleFlame">
+                  <div class="flame-inner"></div>
+                </div>
+                <div class="smoke" id="candleSmoke"></div>
+                <div class="wick"></div>
+                <div class="candle-body"></div>
+              </div>
+              <!-- Cake layers -->
+              <div class="cake-tier tier-top">
+                <div class="frosting-drips">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="cake-cherries">🍒 🍓 🍒</div>
+              </div>
+              <div class="cake-tier tier-base">
+                <div class="cake-piping"></div>
+              </div>
+              <div class="cake-plate"></div>
+            </div>
+
+            <!-- Candle status message -->
+            <div id="candleStatus" class="candle-hint">
+              Tap the candle to blow out the flame!
+            </div>
+          </div>
+
+          <div class="wish-actions">
+            <button id="makeWishBtn" class="art-btn primary-btn celebration-trigger">
+              <span class="btn-icon">✨</span>
+              <span>Make a wish</span>
+            </button>
+            <button id="revealSurpriseFromWishBtn" class="art-btn secondary-btn">
+              <span class="btn-icon">💌</span>
+              <span>Read your birthday letter</span>
+            </button>
+          </div>
+
+          <!-- Wish Celebration Popup Box (Appears on click) -->
+          <div id="wishCelebrationMessage" class="wish-celebration-message hidden" role="alert">
+            <div class="wish-sparkle-icon">✨🎂🎈</div>
+            <h3 class="wish-cheer-title">Your 12th Wish is Sent to the Stars!</h3>
+            <p class="wish-cheer-text">
+              May every brush stroke of your 12th year be filled with wonder, laughing with your friends, discovering new passions, and painting memories that shine forever!
+            </p>
+          </div>
+          
+          <div class="card-ornament ornament-bottom">✦ ✦ ✦</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FINAL SECTION -->
+    <section class="final-section">
+      <div class="final-artistic-visual" aria-hidden="true">
+        <svg class="paint-swirl" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 120 C 150 20, 250 180, 380 90 C 450 40, 520 140, 580 80" stroke="#F2A93B" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+          <path d="M40 90 C 180 180, 280 40, 420 120 C 480 160, 530 60, 570 110" stroke="#E85D4E" stroke-width="8" stroke-linecap="round" opacity="0.7"/>
+          <path d="M60 140 C 200 60, 310 160, 440 70 C 490 20, 540 100, 560 90" stroke="#3B5BA5" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <div class="final-content">
+        <h2 class="final-headline">
+          “Keep painting your world, Nuricamal.”
+        </h2>
+        
+        <div class="final-signature-wrap">
+          <span class="signature-line"></span>
+          <p class="final-signature">
+            With love, from your family.
+          </p>
+          <span class="signature-line"></span>
+        </div>
+
+        <div class="final-hearts">
+          <span class="floating-heart">💖</span>
+          <span class="floating-palette">🎨</span>
+          <span class="floating-heart">✨</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- BIRTHDAY SURPRISE MODAL / HIDDEN MESSAGE REVEAL -->
+  <div id="surpriseModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="surpriseModalTitle">
+    <div class="modal-envelope-wrapper">
+      <div class="letter-card">
+        <button id="closeSurpriseBtn" class="modal-close-btn" aria-label="Close surprise message">&times;</button>
+        
+        <div class="letter-wax-seal" aria-hidden="true">
+          <span class="seal-letter">N</span>
+        </div>
+
+        <div class="letter-header">
+          <span class="letter-label">✦ A Birthday Letter for You ✦</span>
+          <h2 id="surpriseModalTitle" class="letter-recipient">Dearest Nuricamal,</h2>
+        </div>
+
+        <div class="letter-body">
+          <p class="letter-text">
+            “Dear Nuricamal, never stop creating, dreaming, and filling the world with your colors. You have a special talent, and I hope your 12th year brings you endless happiness, inspiration, and beautiful adventures. Happy Birthday!”
+          </p>
+        </div>
+
+        <div class="letter-footer">
+          <div class="letter-doodle">🎨 🌸 💫</div>
+          <p class="letter-signoff">With all our warmest love & admiration,</p>
+          <p class="letter-sender">Your Family</p>
+        </div>
+
+        <div class="letter-actions">
+          <button id="modalConfettiBtn" class="art-btn primary-btn">
+            <span>Celebrate Again! 🎊</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="gallery-footer">
+    <div class="footer-container">
+      <p>Created with love for Nuricamal's 12th Birthday · A Lifetime of Masterpieces Awaits</p>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
