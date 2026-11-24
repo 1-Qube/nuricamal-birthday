@@ -576,8 +576,18 @@ function initDrawingStudio() {
   const MAX_UNDO = 20;
 
   // Resize canvas for sharp Retina display while preserving content
+  let lastRectWidth = 0;
+  let lastRectHeight = 0;
+
   function resizeCanvas() {
     const rect = canvas.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) return;
+    
+    // Skip minor resize triggers caused by mobile scroll address bar toggle
+    if (Math.abs(rect.width - lastRectWidth) < 3 && Math.abs(rect.height - lastRectHeight) < 3) {
+      return;
+    }
+
     const dpr = window.devicePixelRatio || 1;
 
     let temp = null;
@@ -587,6 +597,9 @@ function initDrawingStudio() {
       temp.height = canvas.height;
       temp.getContext("2d").drawImage(canvas, 0, 0);
     }
+
+    lastRectWidth = rect.width;
+    lastRectHeight = rect.height;
 
     canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;

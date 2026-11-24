@@ -1837,12 +1837,19 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   11. RESPONSIVE REFINEMENTS
+   11. RESPONSIVE & MOBILE REFINEMENTS
    -------------------------------------------------------------------------- */
+
+/* Tablet & Medium Screens (<= 1024px) */
 @media (max-width: 1024px) {
+  :root {
+    --gutter: clamp(20px, 4vw, 40px);
+  }
+
   .editorial-heading-layout,
   .gallery-header-block {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .card-cobalt,
@@ -1869,41 +1876,433 @@ button {
   }
 }
 
+/* Mobile & Small Screens (<= 768px) */
 @media (max-width: 768px) {
-  .opening-top-meta,
-  .opening-bottom-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+  :root {
+    --gutter: 18px;
   }
 
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Exhibition Header */
   .exhibition-header {
-    padding: 16px var(--gutter);
+    padding: 14px var(--gutter);
+  }
+
+  .exhibition-nav {
+    display: none; /* Hide desktop nav anchors for clean mobile header */
   }
 
   .colophon-right {
     gap: 12px;
   }
 
-  .exhibition-nav {
-    display: none; /* Preserve clean layout on small viewports */
+  /* Section Padding */
+  .section-opening {
+    padding: 96px var(--gutter) 40px;
+    min-height: 100svh;
+  }
+
+  .section-chapter {
+    padding: 72px var(--gutter);
+  }
+
+  /* Opening Hero Typography */
+  .opening-top-meta {
+    padding-bottom: 12px;
+    font-size: 0.62rem;
+  }
+
+  .hero-typography-block {
+    padding: 24px 0;
+    margin: auto 0;
+  }
+
+  .hero-name {
+    font-size: clamp(2.4rem, 12vw, 5rem);
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+    word-break: break-word;
+  }
+
+  .hero-subline-wrapper {
+    margin-top: 18px;
+  }
+
+  .hero-statement {
+    font-size: clamp(0.95rem, 3.2vw, 1.35rem);
+    line-height: 1.35;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hero-statement::before {
+    width: 32px;
+    height: 2px;
+  }
+
+  .hero-caption {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    line-height: 1.45;
+  }
+
+  .opening-bottom-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .quote-aside {
+    max-width: 100%;
+  }
+
+  .meta-aside-text {
+    font-size: 0.95rem;
+  }
+
+  .btn-enter-exhibition {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 0.72rem;
+  }
+
+  /* Chapter 01: Colors */
+  .massive-display-title {
+    font-size: clamp(2.2rem, 8.5vw, 4.2rem);
+    line-height: 1;
+  }
+
+  .italic-serif-title {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+
+  .editorial-heading-layout {
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+
+  .manifesto-aside {
+    padding-left: 16px;
+    border-left-width: 2px;
+    gap: 14px;
+  }
+
+  .manifesto-text {
+    font-size: 1.12rem;
+    line-height: 1.45;
+  }
+
+  .pigment-studies-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .pigment-card {
+    min-height: auto;
+    padding: 24px 18px;
+  }
+
+  .swatch-frame {
+    height: 150px;
+    margin-bottom: 18px;
+  }
+
+  .pigment-name {
+    font-size: 1.3rem;
+  }
+
+  .pigment-poetic-desc {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .editorial-interlude {
+    margin-top: 48px;
+    padding: 36px 0;
+  }
+
+  .poetic-blockquote {
+    font-size: clamp(1.35rem, 5vw, 2.2rem);
+    line-height: 1.35;
+  }
+
+  /* Chapter 02: Studio Canvas (Mobile Touch-Optimized) */
+  .canvas-paper-frame {
+    height: clamp(340px, 46vh, 500px);
+  }
+
+  .studio-header-block {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .studio-instructions-badge {
+    padding: 6px 12px;
+    font-size: 0.62rem;
+    line-height: 1.4;
   }
 
   .floating-palette-dock {
-    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
     gap: 12px;
+    padding: 12px 14px;
   }
 
   .dock-divider {
     display: none;
   }
 
+  .dock-section {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .dock-brushes {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+
+  .dock-brush-buttons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .dock-tool-btn {
+    padding: 6px 10px;
+    font-size: 0.62rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .dock-pigments {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .palette-wells {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .color-well, .custom-color-trigger {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dock-size {
+    justify-content: space-between;
+  }
+
+  #brush-size-slider {
+    width: 120px;
+  }
+
+  .dock-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .dock-action-btn {
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 0.65rem;
+  }
+
+  /* Chapter 03: Gallery */
+  .gallery-header-block {
+    margin-bottom: 40px;
+    gap: 20px;
+  }
+
+  .gallery-manifesto {
+    padding-left: 16px;
+    gap: 12px;
+  }
+
+  .gallery-manifesto p {
+    font-size: 1.1rem;
+    line-height: 1.45;
+  }
+
+  .gallery-asymmetric-wall {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .artwork-matting {
+    padding: 16px;
+  }
+
+  .frame-primary .artwork-viewport,
+  .frame-landscape .artwork-viewport,
+  .frame-square .artwork-viewport,
+  .frame-tall .artwork-viewport,
+  .frame-future .artwork-viewport {
+    height: clamp(260px, 62vw, 360px);
+  }
+
+  /* Show upload hint button on mobile touch devices */
+  .artwork-upload-hint {
+    opacity: 0.95;
+    bottom: 8px;
+    right: 8px;
+    padding: 6px 10px;
+    font-size: 0.6rem;
+  }
+
+  .museum-placard {
+    margin-top: 14px;
+    padding-top: 10px;
+  }
+
+  .placard-title {
+    font-size: 1.15rem;
+  }
+
+  .placard-medium {
+    font-size: 0.88rem;
+  }
+
+  .placard-meta {
+    font-size: 0.58rem;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Chapter 04: Birthday Reveal */
+  .section-birthday-reveal {
+    padding: 80px var(--gutter);
+  }
+
+  .reveal-curtain-trigger {
+    padding: 36px 16px;
+  }
+
+  .trigger-text-large {
+    font-size: clamp(1.8rem, 7.5vw, 3.2rem);
+  }
+
+  .trigger-sub {
+    font-size: 0.64rem;
+  }
+
+  .celebration-content-box {
+    padding: 36px 18px 28px;
+    width: 92vw;
+    max-height: 88vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .btn-close-celebration {
+    top: 12px;
+    right: 12px;
+    padding: 4px 8px;
+    font-size: 0.65rem;
+  }
+
+  .celebration-headline {
+    font-size: clamp(1.7rem, 6.5vw, 2.8rem);
+    margin-bottom: 16px;
+  }
+
+  .celebration-message {
+    font-size: 1rem;
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+
+  .celebration-interactive-note {
+    font-size: 0.62rem;
+    line-height: 1.4;
+  }
+
+  /* Chapter 05: Ending */
+  .section-ending {
+    padding: 80px var(--gutter) 40px;
+    min-height: auto;
+  }
+
+  .ending-massive-title {
+    font-size: clamp(2.2rem, 8vw, 4.8rem);
+    line-height: 0.98;
+    margin-bottom: 24px;
+  }
+
+  .ending-subtitle {
+    font-size: clamp(1.2rem, 4.8vw, 2.2rem);
+  }
+
+  .ending-signature {
+    font-size: 0.85rem;
+  }
+
+  .ending-action-row {
+    margin: 36px 0;
+  }
+
+  .btn-return-top {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+    font-size: 0.72rem;
+  }
+
+  /* Footer */
   .exhibition-footer {
     flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
   }
 
   .footer-meta-col.col-right {
     text-align: left;
+  }
+}
+
+/* Extra Small Phones (<= 480px) */
+@media (max-width: 480px) {
+  .colophon-left {
+    display: none; /* Keep header minimal: monogram on left, language switcher on right */
+  }
+
+  .colophon-center .brand-monogram {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    padding: 0;
+  }
+
+  .lang-switcher {
+    padding: 3px 6px;
+    gap: 2px;
+  }
+
+  .lang-btn {
+    font-size: 0.62rem;
+    padding: 3px 5px;
+    min-width: 24px;
+    text-align: center;
+  }
+
+  .opening-top-meta .annotation-item:last-child {
+    display: none;
   }
 }
