@@ -13,7 +13,7 @@ Designed not as a conventional birthday template, but as a high-end contemporary
 1. **The Canvas (Opening)** — Cover monograph with fluid watercolor bleeding and reactive paint-trail cursor.
 2. **A World of Colors** — Editorial pigment studies: Cobalt Blue, Vermilion Red, Butter Yellow, Viridian Sage, and Sumi Bone Ink.
 3. **The Interactive Canvas** — Full digital art studio with 5 authentic textures (Watercolor Wash, Heavy Gouache, Sketch Charcoal, Pigment Splatter, Linen Eraser), stroke controls, undo history, and export.
-4. **An Unfinished Collection (The Gallery)** — Contemporary asymmetric wall ready for Nuricamal's real paintings with museum placards and instant local image placing.
+4. **An Unfinished Collection (The Gallery)** — Four photographs of Nuricamal (sweets, roses, the garden, the laughing hour), hung with museum placards. Click any frame to enlarge.
 5. **The Birthday Reveal** — Secret dedication triggering a full-screen celebration with artisanal confetti physics and interactive color bursts.
 6. **Epilogue** — Minimalist closing manifesto: *"The world is your canvas. Keep creating, Nuricamal."*
 

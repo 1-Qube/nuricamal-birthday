@@ -83,28 +83,31 @@ const i18nData = {
     ch3_badge_label: "РЕТРОСПЕКТИВА ЖӘНЕ МҰРАҒАТ",
     ch3_title_line1: "АЯҚТАЛМАҒАН",
     ch3_title_line2: "жинақ.",
-    ch3_manifesto: "Нурикамалдың шынайы туындыларына арналған кеңістік. Он екі жылдық таңданыс пен қағазға көшкен қиял жемісі.",
-    ch3_stamp: "СЕРИЯ: 2020 — ҚАЗІРГІ УАҚЫТ // ТҮПНҰСҚА ТУЫНДЫЛАР",
-    placard1_idx: "№ 01 ЭКСПОНАТ",
-    placard1_title: "Алғашқы көкжиек",
-    placard1_medium: "Гуашь пен табиғи пигмент, қалың мақта қағазы",
-    placard1_year: "ЖЫЛ: 2023",
-    placard1_dim: "ӨЛШЕМІ: 42 × 59 СМ",
-    placard2_idx: "№ 02 ЭКСПОНАТ",
-    placard2_title: "Көгілдір мезгіл сыры",
-    placard2_medium: "Кобальт пигменті, графит және зығыр кенеп",
-    placard2_year: "ЖЫЛ: 2024",
-    placard2_dim: "ӨЛШЕМІ: 60 × 40 СМ",
-    placard3_idx: "№ 03 ЭКСПОНАТ",
-    placard3_title: "Желдегі жабайы күнбағыстар",
-    placard3_medium: "Акрил бояуы және алтын сары охра",
-    placard3_year: "ЖЫЛ: 2024",
-    placard3_dim: "ӨЛШЕМІ: 35 × 35 СМ",
-    placard4_idx: "№ 04 ЭКСПОНАТ",
-    placard4_title: "Тыныш геометрия",
-    placard4_medium: "Шығыс сиясы және сулы акварель",
-    placard4_year: "ЖЫЛ: 2024",
-    placard4_dim: "ӨЛШЕМІ: 30 × 70 СМ",
+    ch3_manifesto: "Бұл суреттер емес — Нурикамалдың өзі. Тәтті қорап, раушандар, раушан бақ және бұкіл бөлмені толтыратын күлкі.",
+    ch3_stamp: "СЕРИЯ: ФОТОСУРЕТТЕР // НУРИКАМАЛ",
+    hero_portrait_idx: "ПОРТРЕТТІК ЗЕРТТЕУ",
+    hero_portrait_cap: "Көрмені ашатын күлкі.",
+    placard_zoom: "ҮЛКЕЙТУ ҮШІН БАСЫҢЫЗ",
+    placard1_idx: "№ 01 ФОТОСУРЕТ",
+    placard1_title: "Ең тәтті қорап",
+    placard1_medium: "Фото — шоколадты құлпынай, қызғылт бау, мұқият ұстау",
+    placard1_year: "НУРИКАМАЛ",
+    placard1_dim: "АЛМАТЫ",
+    placard2_idx: "№ 02 ФОТОСУРЕТ",
+    placard2_title: "Екеуге арналған раушандар",
+    placard2_medium: "Фото — дос, қызғылт раушан, күміс перде",
+    placard2_year: "НУРИКАМАЛ",
+    placard2_dim: "БІРГЕ",
+    placard3_idx: "№ 03 ФОТОСУРЕТ",
+    placard3_title: "Күлкі сағаты",
+    placard3_medium: "Фото — үш тәтті және бөлмені толтыратын күлкі",
+    placard3_year: "НУРИКАМАЛ",
+    placard3_dim: "КАФЕ",
+    placard4_idx: "№ 04 ФОТОСУРЕТ",
+    placard4_title: "Раушандар арасында",
+    placard4_medium: "Фото — қызыл раушан бағы және соның ішінде тұрған ол",
+    placard4_year: "НУРИКАМАЛ",
+    placard4_dim: "БАҚ",
     placard5_idx: "№ 05 ЭКСПОНАТ",
     placard5_title: "Атаусыз (Он екі жас)",
     placard5_medium: "Таза бельгиялық зығыр, басталмаған кеңістік",
@@ -208,28 +211,31 @@ const i18nData = {
     ch3_badge_label: "RETROSPECTIVE & ARCHIVE",
     ch3_title_line1: "AN UNFINISHED",
     ch3_title_line2: "collection.",
-    ch3_manifesto: "Spaces reserved for Nuricamal's genuine paintings. Twelve years of seeing what others miss, and translating wonder onto paper.",
-    ch3_stamp: "SERIES: 2020 — PRESENT // ORIGINAL WORKS",
-    placard1_idx: "EXHIBIT NO. 01",
-    placard1_title: "The First Horizon",
-    placard1_medium: "Gouache and raw pigment on heavy rag paper",
-    placard1_year: "YEAR: 2023",
-    placard1_dim: "DIMENSIONS: 42 × 59 CM",
-    placard2_idx: "EXHIBIT NO. 02",
-    placard2_title: "Blue Hour Reverie",
-    placard2_medium: "Cobalt pigment, graphite & river sand on linen",
-    placard2_year: "YEAR: 2024",
-    placard2_dim: "DIMENSIONS: 60 × 40 CM",
-    placard3_idx: "EXHIBIT NO. 03",
-    placard3_title: "Wild Sunflowers in the Wind",
-    placard3_medium: "Heavy body acrylic & butter ochre",
-    placard3_year: "YEAR: 2024",
-    placard3_dim: "DIMENSIONS: 35 × 35 CM",
-    placard4_idx: "EXHIBIT NO. 04",
-    placard4_title: "Quiet Geometry",
-    placard4_medium: "Sumi ink and diluted watercolor wash",
-    placard4_year: "YEAR: 2024",
-    placard4_dim: "DIMENSIONS: 30 × 70 CM",
+    ch3_manifesto: "These are not paintings. They are Nuricamal herself — a box of sweets, roses for two, a garden in bloom, and a laugh that fills the table.",
+    ch3_stamp: "SERIES: PHOTOGRAPHS // NURICAMAL",
+    hero_portrait_idx: "PORTRAIT STUDY",
+    hero_portrait_cap: "The laugh that opens the exhibition.",
+    placard_zoom: "CLICK TO ENLARGE",
+    placard1_idx: "PHOTOGRAPH NO. 01",
+    placard1_title: "A Box of Sweetness",
+    placard1_medium: "Photograph — chocolate strawberries, a pink ribbon, a careful hold",
+    placard1_year: "NURICAMAL",
+    placard1_dim: "ALMATY",
+    placard2_idx: "PHOTOGRAPH NO. 02",
+    placard2_title: "Roses for Two",
+    placard2_medium: "Photograph — a friend, pink roses, silver curtains",
+    placard2_year: "NURICAMAL",
+    placard2_dim: "TOGETHER",
+    placard3_idx: "PHOTOGRAPH NO. 03",
+    placard3_title: "The Laughing Hour",
+    placard3_medium: "Photograph — three sweets and a smile that fills the room",
+    placard3_year: "NURICAMAL",
+    placard3_dim: "CAFÉ",
+    placard4_idx: "PHOTOGRAPH NO. 04",
+    placard4_title: "Among the Roses",
+    placard4_medium: "Photograph — a garden in full bloom, and her standing in it",
+    placard4_year: "NURICAMAL",
+    placard4_dim: "THE GARDEN",
     placard5_idx: "EXHIBIT NO. 05",
     placard5_title: "Untitled (Age Twelve)",
     placard5_medium: "Pure Belgian linen, gesso, uncommitted space",
@@ -333,28 +339,31 @@ const i18nData = {
     ch3_badge_label: "РЕТРОСПЕКТИВА И АРХИВ",
     ch3_title_line1: "НЕОКОНЧЕННАЯ",
     ch3_title_line2: "коллекция.",
-    ch3_manifesto: "Пространство, зарезервированное для настоящих картин Нурикамал. Двенадцать лет удивительного взгляда на мир.",
-    ch3_stamp: "СЕРИЯ: 2020 — НАСТОЯЩЕЕ ВРЕМЯ // ОРИГИНАЛЬНЫЕ РАБОТЫ",
-    placard1_idx: "ЭКСПОНАТ № 01",
-    placard1_title: "Первый горизонт",
-    placard1_medium: "Гуашь и натуральный пигмент на плотной хлопковой бумаге",
-    placard1_year: "ГОД: 2023",
-    placard1_dim: "РАЗМЕРЫ: 42 × 59 СМ",
-    placard2_idx: "ЭКСПОНАТ № 02",
-    placard2_title: "Размышление в синий час",
-    placard2_medium: "Пигмент кобальта, графит и речной песок на льняном холсте",
-    placard2_year: "ГОД: 2024",
-    placard2_dim: "РАЗМЕРЫ: 60 × 40 СМ",
-    placard3_idx: "ЭКСПОНАТ № 03",
-    placard3_title: "Дикие подсолнухи на ветру",
-    placard3_medium: "Густой акрил и золотистая охра",
-    placard3_year: "ГОД: 2024",
-    placard3_dim: "РАЗМЕРЫ: 35 × 35 СМ",
-    placard4_idx: "ЭКСПОНАТ № 04",
-    placard4_title: "Тихая геометрия",
-    placard4_medium: "Тушь суми и полупрозрачная акварельная заливка",
-    placard4_year: "ГОД: 2024",
-    placard4_dim: "РАЗМЕРЫ: 30 × 70 СМ",
+    ch3_manifesto: "Это не картины. Это сама Нурикамал — коробка сладостей, розы на двоих, сад в цвету и смех, который заполняет стол.",
+    ch3_stamp: "СЕРИЯ: ФОТОГРАФИИ // НУРИКАМАЛ",
+    hero_portrait_idx: "ПОРТРЕТНЫЙ ЭТЮД",
+    hero_portrait_cap: "Смех, которым открывается выставка.",
+    placard_zoom: "НАЖМИТЕ, ЧТОБЫ УВЕЛИЧИТЬ",
+    placard1_idx: "ФОТОГРАФИЯ № 01",
+    placard1_title: "Самая сладкая коробка",
+    placard1_medium: "Фото — клубника в шоколаде, розовая лента, бережные руки",
+    placard1_year: "НУРИКАМАЛ",
+    placard1_dim: "АЛМАТЫ",
+    placard2_idx: "ФОТОГРАФИЯ № 02",
+    placard2_title: "Розы на двоих",
+    placard2_medium: "Фото — подруга, розовые розы, серебряные шторы",
+    placard2_year: "НУРИКАМАЛ",
+    placard2_dim: "ВДВОЁМ",
+    placard3_idx: "ФОТОГРАФИЯ № 03",
+    placard3_title: "Час смеха",
+    placard3_medium: "Фото — три сладости и улыбка, которая заполняет комнату",
+    placard3_year: "НУРИКАМАЛ",
+    placard3_dim: "КАФЕ",
+    placard4_idx: "ФОТОГРАФИЯ № 04",
+    placard4_title: "Среди роз",
+    placard4_medium: "Фото — сад в полном цвету и она в самой середине",
+    placard4_year: "НУРИКАМАЛ",
+    placard4_dim: "САД",
     placard5_idx: "ЭКСПОНАТ № 05",
     placard5_title: "Без названия (Двенадцать лет)",
     placard5_medium: "Бельгийский лён, левкас, нетронутое пространство",
@@ -393,6 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initDrawingStudio();
   initBirthdayReveal();
   initNavigationAndScroll();
+  initPhotoLightbox();
 });
 
 /* ==============================================================================
@@ -1029,6 +1039,51 @@ function initBirthdayReveal() {
 /* ==============================================================================
  * 05. NAVIGATION & SMOOTH SCROLLING CONTROLS
  * ============================================================================== */
+function initPhotoLightbox() {
+  const box = document.getElementById("photo-lightbox");
+  const img = document.getElementById("lightbox-img");
+  const cap = document.getElementById("lightbox-caption");
+  const closeBtn = document.getElementById("lightbox-close");
+  if (!box || !img) return;
+
+  function openPhoto(src, alt, key) {
+    if (!src) return;
+    img.src = src;
+    img.alt = alt || "";
+    const dict = i18nData[currentLanguage] || {};
+    cap.textContent = (key && dict[key]) || alt || "";
+    box.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closePhoto() {
+    box.hidden = true;
+    img.removeAttribute("src");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".exhibit-photo").forEach((photo) => {
+    photo.addEventListener("click", () => {
+      openPhoto(photo.getAttribute("src"), photo.alt, photo.dataset.captionKey);
+    });
+  });
+
+  document.querySelectorAll(".hero-portrait-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const inner = btn.querySelector("img");
+      openPhoto(btn.dataset.photo, inner ? inner.alt : "", btn.dataset.captionKey);
+    });
+  });
+
+  closeBtn.addEventListener("click", closePhoto);
+  box.addEventListener("click", (e) => {
+    if (e.target === box) closePhoto();
+  });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !box.hidden) closePhoto();
+  });
+}
+
 function initNavigationAndScroll() {
   const enterBtn = document.getElementById("enter-btn");
   if (enterBtn) {

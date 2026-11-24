@@ -2202,3 +2202,184 @@ button {
     display: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   12. NURICAMAL'S PHOTOGRAPHS
+   -------------------------------------------------------------------------- */
+.exhibit-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.6s var(--ease-editorial);
+}
+
+.frame-primary .exhibit-photo { object-position: 68% 22%; }
+.frame-landscape .exhibit-photo { object-position: 50% 18%; }
+.frame-square .exhibit-photo { object-position: 58% 22%; }
+.frame-tall .exhibit-photo { object-position: 50% 16%; }
+
+.gallery-exhibit-frame:hover .exhibit-photo {
+  transform: scale(1.04);
+}
+
+.placard-zoom {
+  display: block;
+  margin: 6px 0 8px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  color: var(--pigment-vermilion);
+}
+
+.hero-portrait {
+  align-self: flex-end;
+  width: min(240px, 22vw);
+  margin: -2vh 4vw 8px 0;
+  transform: rotate(2.2deg);
+  z-index: 3;
+}
+
+.hero-portrait-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  cursor: zoom-in;
+}
+
+.hero-portrait-mat {
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #fff;
+  border: 10px solid #fff;
+  box-shadow: var(--shadow-float);
+}
+
+.hero-portrait-mat img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% 28%;
+  display: block;
+}
+
+.hero-portrait figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 8px;
+  padding-left: 4px;
+}
+
+.hero-portrait-idx,
+.hero-portrait-cap {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-secondary);
+}
+
+.celebration-portraits {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 28px;
+  max-width: 520px;
+}
+
+.celebration-portraits img {
+  width: 72px;
+  height: 92px;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 18px rgba(18, 17, 16, 0.12);
+  transform: rotate(var(--tilt, -2deg));
+}
+
+.celebration-portraits img:nth-child(2) { --tilt: 1.5deg; object-position: center 12%; }
+.celebration-portraits img:nth-child(3) { --tilt: -1deg; object-position: center 14%; }
+.celebration-portraits img:nth-child(4) { --tilt: 2deg; object-position: 55% 22%; }
+
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(18, 17, 16, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.photo-lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-frame {
+  margin: 0;
+  max-width: min(920px, 92vw);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.lightbox-frame img {
+  max-width: min(920px, 92vw);
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  border: 12px solid #fff;
+  box-shadow: var(--shadow-float);
+}
+
+.lightbox-frame figcaption {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-paper);
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(250, 247, 242, 0.4);
+  color: var(--color-paper);
+  font-size: 1.1rem;
+}
+
+.lightbox-close:hover {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+@media (max-width: 768px) {
+  .hero-portrait {
+    align-self: flex-start;
+    width: min(168px, 48vw);
+    margin: 4px 0 8px;
+    transform: rotate(-1.5deg);
+  }
+
+  .hero-portrait-mat {
+    border-width: 7px;
+  }
+
+  .celebration-portraits img {
+    width: 58px;
+    height: 74px;
+  }
+}

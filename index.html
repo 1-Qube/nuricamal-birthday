@@ -87,6 +87,18 @@
           </div>
         </div>
 
+        <figure class="hero-portrait">
+          <button type="button" class="hero-portrait-btn" data-photo="photos/nuri4.jpg" data-caption-key="hero_portrait_cap">
+            <span class="hero-portrait-mat">
+              <img src="photos/nuri4.jpg" alt="Nuricamal smiling over a plate of sweets">
+            </span>
+          </button>
+          <figcaption>
+            <span class="hero-portrait-idx" data-i18n="hero_portrait_idx">PORTRAIT STUDY</span>
+            <span class="hero-portrait-cap" data-i18n="hero_portrait_cap">The laugh that opens the exhibition.</span>
+          </figcaption>
+        </figure>
+
         <!-- Bottom Editorial Layout & Invitation -->
         <div class="opening-bottom-meta">
           <div class="quote-aside">
@@ -400,44 +412,12 @@
           <div class="gallery-exhibit-frame frame-primary" data-artwork-slot="1">
             <div class="artwork-matting">
               <div class="artwork-viewport" id="artwork-viewport-1">
-                <!-- SVG Artwork 01: The First Horizon — Cobalt wash & ochre bursts -->
-                <svg class="svg-artwork" viewBox="0 0 500 680" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-                  <defs>
-                    <radialGradient id="a1-sky" cx="65%" cy="28%" r="60%">
-                      <stop offset="0%" stop-color="#1434CB" stop-opacity="0.9"/>
-                      <stop offset="100%" stop-color="#FAF7F2" stop-opacity="0"/>
-                    </radialGradient>
-                    <radialGradient id="a1-ochre" cx="20%" cy="82%" r="55%">
-                      <stop offset="0%" stop-color="#F5CE42" stop-opacity="0.85"/>
-                      <stop offset="100%" stop-color="#FAF7F2" stop-opacity="0"/>
-                    </radialGradient>
-                    <filter id="a1-blur"><feGaussianBlur stdDeviation="18"/></filter>
-                    <filter id="a1-blur2"><feGaussianBlur stdDeviation="6"/></filter>
-                  </defs>
-                  <rect width="500" height="680" fill="#FAF4EC"/>
-                  <!-- Background washes -->
-                  <ellipse cx="325" cy="190" rx="260" ry="210" fill="url(#a1-sky)" filter="url(#a1-blur)"/>
-                  <ellipse cx="100" cy="560" rx="210" ry="170" fill="url(#a1-ochre)" filter="url(#a1-blur)"/>
-                  <!-- Gestural horizon line -->
-                  <path d="M0 380 Q120 340 260 370 Q380 395 500 355" stroke="#121110" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.55"/>
-                  <!-- Bold ink strokes -->
-                  <path d="M60 200 Q110 310 90 460" stroke="#121110" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.7" filter="url(#a1-blur2)"/>
-                  <path d="M70 205 Q118 315 98 462" stroke="#121110" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.4"/>
-                  <!-- Cobalt accent rectangle -->
-                  <rect x="300" y="80" width="140" height="6" fill="#1434CB" opacity="0.75" rx="1"/>
-                  <rect x="320" y="96" width="80" height="2.5" fill="#1434CB" opacity="0.4" rx="1"/>
-                  <!-- Ochre splatter dots -->
-                  <circle cx="140" cy="560" r="28" fill="#F5CE42" opacity="0.6" filter="url(#a1-blur2)"/>
-                  <circle cx="175" cy="535" r="12" fill="#F5CE42" opacity="0.45"/>
-                  <circle cx="112" cy="590" r="8" fill="#E3371E" opacity="0.35"/>
-                  <!-- Fine annotation mark -->
-                  <line x1="380" y1="600" x2="460" y2="600" stroke="#121110" stroke-width="1" opacity="0.3"/>
-                  <line x1="380" y1="606" x2="430" y2="606" stroke="#121110" stroke-width="1" opacity="0.2"/>
-                </svg>
+                <img class="exhibit-photo" src="photos/nuri1.jpg" alt="Nuricamal holding a box of chocolate strawberries tied with a pink ribbon" data-caption-key="placard1_title">
               </div>
             </div>
             <div class="museum-placard">
               <div class="placard-index" data-i18n="placard1_idx">EXHIBIT NO. 01</div>
+              <span class="placard-zoom" data-i18n="placard_zoom">CLICK TO ENLARGE</span>
               <h3 class="placard-title" data-i18n="placard1_title">The First Horizon</h3>
               <p class="placard-medium" data-i18n="placard1_medium">Gouache and raw pigment on heavy rag paper</p>
               <div class="placard-meta">
@@ -451,43 +431,12 @@
           <div class="gallery-exhibit-frame frame-landscape" data-artwork-slot="2">
             <div class="artwork-matting">
               <div class="artwork-viewport" id="artwork-viewport-2">
-                <!-- SVG Artwork 02: Blue Hour Reverie — Vermilion sky fading into deep ink, cobalt geometry -->
-                <svg class="svg-artwork" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-                  <defs>
-                    <linearGradient id="a2-sky" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#E3371E" stop-opacity="0.9"/>
-                      <stop offset="55%" stop-color="#121110" stop-opacity="0.95"/>
-                      <stop offset="100%" stop-color="#0A0908" stop-opacity="1"/>
-                    </linearGradient>
-                    <radialGradient id="a2-glow" cx="30%" cy="55%" r="40%">
-                      <stop offset="0%" stop-color="#F5CE42" stop-opacity="0.65"/>
-                      <stop offset="100%" stop-color="#E3371E" stop-opacity="0"/>
-                    </radialGradient>
-                    <filter id="a2-blur"><feGaussianBlur stdDeviation="22"/></filter>
-                    <filter id="a2-soft"><feGaussianBlur stdDeviation="4"/></filter>
-                  </defs>
-                  <rect width="700" height="400" fill="url(#a2-sky)"/>
-                  <!-- Dusk glow -->
-                  <ellipse cx="210" cy="220" rx="200" ry="150" fill="url(#a2-glow)" filter="url(#a2-blur)"/>
-                  <!-- Cobalt geometric lines -->
-                  <rect x="400" y="60" width="260" height="4" fill="#1434CB" opacity="0.7" rx="1"/>
-                  <rect x="430" y="78" width="180" height="2" fill="#1434CB" opacity="0.45" rx="1"/>
-                  <rect x="410" y="92" width="220" height="1.5" fill="#1434CB" opacity="0.3" rx="1"/>
-                  <!-- Cobalt vertical bar -->
-                  <rect x="590" y="40" width="8" height="320" fill="#1434CB" opacity="0.55" filter="url(#a2-soft)"/>
-                  <rect x="602" y="80" width="3" height="200" fill="#1434CB" opacity="0.3"/>
-                  <!-- Horizon line -->
-                  <line x1="0" y1="260" x2="700" y2="240" stroke="#FAF7F2" stroke-width="1.2" opacity="0.3"/>
-                  <!-- Thin gestural strokes -->
-                  <path d="M50 320 Q200 280 350 300 Q500 320 650 290" stroke="#FAF7F2" stroke-width="1.5" fill="none" opacity="0.2"/>
-                  <!-- Yellow moon / sun disc -->
-                  <circle cx="195" cy="195" r="38" fill="#F5CE42" opacity="0.75" filter="url(#a2-soft)"/>
-                  <circle cx="195" cy="195" r="30" fill="#F5CE42" opacity="0.9"/>
-                </svg>
+                <img class="exhibit-photo" src="photos/nuri2.jpg" alt="Nuricamal with a friend, holding a bouquet of pink roses" data-caption-key="placard2_title">
               </div>
             </div>
             <div class="museum-placard">
               <div class="placard-index" data-i18n="placard2_idx">EXHIBIT NO. 02</div>
+              <span class="placard-zoom" data-i18n="placard_zoom">CLICK TO ENLARGE</span>
               <h3 class="placard-title" data-i18n="placard2_title">Blue Hour Reverie</h3>
               <p class="placard-medium" data-i18n="placard2_medium">Cobalt pigment, graphite & river sand on linen</p>
               <div class="placard-meta">
@@ -501,54 +450,12 @@
           <div class="gallery-exhibit-frame frame-square" data-artwork-slot="3">
             <div class="artwork-matting">
               <div class="artwork-viewport" id="artwork-viewport-3">
-                <!-- SVG Artwork 03: Wild Sunflowers in the Wind — Yellow/viridian layered circles -->
-                <svg class="svg-artwork" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-                  <defs>
-                    <radialGradient id="a3-bg" cx="50%" cy="50%" r="70%">
-                      <stop offset="0%" stop-color="#1A6347"/>
-                      <stop offset="100%" stop-color="#0E3D2B"/>
-                    </radialGradient>
-                    <filter id="a3-glow"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                    <filter id="a3-soft"><feGaussianBlur stdDeviation="3"/></filter>
-                  </defs>
-                  <rect width="420" height="420" fill="url(#a3-bg)"/>
-                  <!-- Stems — gestural ink lines -->
-                  <line x1="210" y1="420" x2="205" y2="210" stroke="#0E3D2B" stroke-width="10" opacity="0.9"/>
-                  <line x1="130" y1="420" x2="140" y2="240" stroke="#0E3D2B" stroke-width="8" opacity="0.75"/>
-                  <line x1="300" y1="420" x2="285" y2="250" stroke="#0E3D2B" stroke-width="7" opacity="0.7"/>
-                  <line x1="210" y1="420" x2="205" y2="210" stroke="#2A8A5A" stroke-width="4" opacity="0.5"/>
-                  <!-- Sunflower 1 (center, large) -->
-                  <circle cx="205" cy="175" r="62" fill="#F5CE42" opacity="0.9" filter="url(#a3-soft)"/>
-                  <circle cx="205" cy="175" r="52" fill="#F5CE42"/>
-                  <circle cx="205" cy="175" r="26" fill="#E3371E" opacity="0.8"/>
-                  <circle cx="205" cy="175" r="18" fill="#121110" opacity="0.75"/>
-                  <!-- Petals hint -->
-                  <circle cx="205" cy="110" r="12" fill="#F5CE42" opacity="0.6"/>
-                  <circle cx="205" cy="240" r="12" fill="#F5CE42" opacity="0.6"/>
-                  <circle cx="140" cy="175" r="12" fill="#F5CE42" opacity="0.6"/>
-                  <circle cx="270" cy="175" r="12" fill="#F5CE42" opacity="0.6"/>
-                  <circle cx="158" cy="123" r="10" fill="#F5CE42" opacity="0.5"/>
-                  <circle cx="252" cy="123" r="10" fill="#F5CE42" opacity="0.5"/>
-                  <circle cx="158" cy="227" r="10" fill="#F5CE42" opacity="0.5"/>
-                  <circle cx="252" cy="227" r="10" fill="#F5CE42" opacity="0.5"/>
-                  <!-- Sunflower 2 (left, smaller) -->
-                  <circle cx="140" cy="208" r="40" fill="#F5CE42" opacity="0.8" filter="url(#a3-soft)"/>
-                  <circle cx="140" cy="208" r="32" fill="#F5CE42"/>
-                  <circle cx="140" cy="208" r="15" fill="#E3371E" opacity="0.7"/>
-                  <circle cx="140" cy="208" r="10" fill="#121110" opacity="0.65"/>
-                  <!-- Sunflower 3 (right, smaller) -->
-                  <circle cx="285" cy="218" r="36" fill="#F5CE42" opacity="0.75" filter="url(#a3-soft)"/>
-                  <circle cx="285" cy="218" r="28" fill="#F5CE42"/>
-                  <circle cx="285" cy="218" r="13" fill="#E3371E" opacity="0.6"/>
-                  <circle cx="285" cy="218" r="8" fill="#121110" opacity="0.6"/>
-                  <!-- Wind motion lines -->
-                  <path d="M60 140 Q100 130 150 145" stroke="#FAF7F2" stroke-width="1.5" fill="none" opacity="0.25"/>
-                  <path d="M270 90 Q330 80 390 100" stroke="#FAF7F2" stroke-width="1" fill="none" opacity="0.2"/>
-                </svg>
+                <img class="exhibit-photo" src="photos/nuri4.jpg" alt="Nuricamal laughing at a cafe table with three sweets" data-caption-key="placard3_title">
               </div>
             </div>
             <div class="museum-placard">
               <div class="placard-index" data-i18n="placard3_idx">EXHIBIT NO. 03</div>
+              <span class="placard-zoom" data-i18n="placard_zoom">CLICK TO ENLARGE</span>
               <h3 class="placard-title" data-i18n="placard3_title">Wild Sunflowers in the Wind</h3>
               <p class="placard-medium" data-i18n="placard3_medium">Heavy body acrylic & butter ochre</p>
               <div class="placard-meta">
@@ -562,44 +469,12 @@
           <div class="gallery-exhibit-frame frame-tall" data-artwork-slot="4">
             <div class="artwork-matting">
               <div class="artwork-viewport" id="artwork-viewport-4">
-                <!-- SVG Artwork 04: Quiet Geometry — Sumi ink wash, fine architecture lines, cobalt circle -->
-                <svg class="svg-artwork" viewBox="0 0 320 720" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-                  <defs>
-                    <linearGradient id="a4-wash" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="#FAF7F2"/>
-                      <stop offset="40%" stop-color="#E8E2DA"/>
-                      <stop offset="100%" stop-color="#121110"/>
-                    </linearGradient>
-                    <filter id="a4-blur"><feGaussianBlur stdDeviation="14"/></filter>
-                    <filter id="a4-soft"><feGaussianBlur stdDeviation="2"/></filter>
-                  </defs>
-                  <rect width="320" height="720" fill="url(#a4-wash)"/>
-                  <!-- Sumi ink blot at bottom -->
-                  <ellipse cx="160" cy="650" rx="130" ry="90" fill="#121110" opacity="0.9" filter="url(#a4-blur)"/>
-                  <ellipse cx="160" cy="660" rx="90" ry="55" fill="#121110" opacity="0.95"/>
-                  <!-- Geometric architecture lines -->
-                  <line x1="80" y1="100" x2="80" y2="600" stroke="#121110" stroke-width="1.2" opacity="0.35"/>
-                  <line x1="160" y1="60" x2="160" y2="650" stroke="#121110" stroke-width="0.8" opacity="0.2"/>
-                  <line x1="240" y1="120" x2="240" y2="580" stroke="#121110" stroke-width="1.2" opacity="0.35"/>
-                  <!-- Horizontal cross rules -->
-                  <line x1="40" y1="200" x2="280" y2="200" stroke="#121110" stroke-width="0.8" opacity="0.25"/>
-                  <line x1="40" y1="350" x2="280" y2="350" stroke="#121110" stroke-width="0.8" opacity="0.2"/>
-                  <line x1="40" y1="500" x2="280" y2="500" stroke="#121110" stroke-width="0.8" opacity="0.2"/>
-                  <!-- Cobalt accent circle — elegant centerpiece -->
-                  <circle cx="160" cy="270" r="70" fill="none" stroke="#1434CB" stroke-width="2.5" opacity="0.75"/>
-                  <circle cx="160" cy="270" r="50" fill="none" stroke="#1434CB" stroke-width="1" opacity="0.4"/>
-                  <circle cx="160" cy="270" r="8" fill="#1434CB" opacity="0.6"/>
-                  <!-- Diagonal gesture through the circle -->
-                  <line x1="110" y1="220" x2="210" y2="320" stroke="#121110" stroke-width="3" opacity="0.5" stroke-linecap="round"/>
-                  <line x1="113" y1="222" x2="208" y2="318" stroke="#121110" stroke-width="1" opacity="0.25"/>
-                  <!-- Fine annotation marks -->
-                  <line x1="20" y1="270" x2="85" y2="270" stroke="#1434CB" stroke-width="1" opacity="0.4"/>
-                  <line x1="235" y1="270" x2="300" y2="270" stroke="#1434CB" stroke-width="1" opacity="0.4"/>
-                </svg>
+                <img class="exhibit-photo" src="photos/nuri3.jpg" alt="Nuricamal standing in a garden of red roses" data-caption-key="placard4_title">
               </div>
             </div>
             <div class="museum-placard">
               <div class="placard-index" data-i18n="placard4_idx">EXHIBIT NO. 04</div>
+              <span class="placard-zoom" data-i18n="placard_zoom">CLICK TO ENLARGE</span>
               <h3 class="placard-title" data-i18n="placard4_title">Quiet Geometry</h3>
               <p class="placard-medium" data-i18n="placard4_medium">Sumi ink and diluted watercolor wash</p>
               <div class="placard-meta">
@@ -732,6 +607,13 @@
               May you always find new colors, new dreams, and new reasons to create. Never stop exploring the world through your imagination. This is your canvas.
             </p>
 
+            <div class="celebration-portraits">
+              <img src="photos/nuri1.jpg" alt="">
+              <img src="photos/nuri2.jpg" alt="">
+              <img src="photos/nuri3.jpg" alt="">
+              <img src="photos/nuri4.jpg" alt="">
+            </div>
+
             <div class="celebration-interactive-note">
               <span data-i18n="rev_interactive_note">✦ Click anywhere to release more color blooms into her celebration ✦</span>
             </div>
@@ -783,6 +665,15 @@
     </section>
 
   </main>
+
+
+  <div class="photo-lightbox" id="photo-lightbox" hidden>
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close photo">✕</button>
+    <figure class="lightbox-frame">
+      <img id="lightbox-img" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
 
   <script src="script.js"></script>
 </body>
